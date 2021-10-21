@@ -1,0 +1,1000 @@
+ 1002  git add .
+ 1003  git commit -m 'inintal committ'
+ 1004  ls
+ 1005  cd src
+ 1006  ls
+ 1007  rm -rf AvlMap/
+ 1008  git submodule add https://github.com/availabs/AvlMap.git
+ 1009  ls AvlMap/
+ 1010  cd ..
+ 1011  npm start
+ 1012  history > log_122320
+ 1013  ll
+ 1014  cat log_122320 
+ 1015  npm start
+ 1016  ll
+ 1017  ..
+ 1018  cd ..
+ 1019  ll
+ 1020  cd ..
+ 1021  ll
+ 1022  cd usr
+ 1023  ll
+ 1024  cd local/
+ 1025  ll
+ 1026  cd bin/
+ 1027  ll
+ 1028  ls
+ 1029  ll
+ 1030  ls
+ 1031  exit
+ 1032  rm -rf react-tutorial/
+ 1033  ls
+ 1034  exit
+ 1035  npm uninstall -g create-react-app
+ 1036  sudo npm uninstall -g create-react-app
+ 1037  rm -rf /usr/local/bin/create-react-app
+ 1038  npx create-react-app react-app-tutorial @1.5.2
+ 1039  ls
+ 1040  cd react-app-tutorial/
+ 1041  npm start
+ 1042  npm i bootstrap@4.1.1
+ 1043  npm i bootstrap
+ 1044  cd ..
+ 1045  create-react-app counter-app
+ 1046  npm start
+ 1047  ll
+ 1048  cd react-app-tutorial/
+ 1049  npm start
+ 1050  ll
+ 1051  cd public/
+ 1052  cd data/
+ 1053  ll
+ 1054  less Tucson_Police_Calls_for_Service_2018_2020_Open_Data.csv 
+ 1055  history
+ 1056  less Tucson_Police_Calls_for_Service_2018_2020_Open_Data.csv 
+ 1057  sudo apt install jsonlint
+ 1058  jsonlint-php 
+ 1059  jsonlint-php public/data/Tucson_Police_Calls_for_Service_2018_2020_Open_Data4326.geojson 
+ 1060  cd tasks/
+ 1061  node process_geojson.js 
+ 1062  npm install big-json --save-dev
+ 1063  node process_geojson.js 
+ 1064  node process_geojson.js > test_data.json
+ 1065  less test_data.json 
+ 1066  mv test_data.json ../public/data/
+ 1067  cd ../
+ 1068  npm start
+ 1069  hisotry
+ 1070  history
+ 1071  node process_geojson.js > test_data_1.json
+ 1072  history > log
+ 1073  npm install big-json --save-dev
+ 1074  node process_geojson.js > test_data_1.json
+ 1075  node process_geojson.js > test_data_2.json
+ 1076  npm start
+ 1077  ll
+ 1078  cd tasks/
+ 1079  ll
+ 1080  node process_geojson.js > test_data_2.json
+ 1081  mv test_data_2.json ../public/data/
+ 1082  ll
+ 1083  cd public/
+ 1084  ll
+ 1085  cd data
+ 1086  ll
+ 1087  less test_data.json 
+ 1088  less test_data_2.json 
+ 1089  cd AVAIL/code/
+ 1090  cd psMap/
+ 1091  ll
+ 1092  rm -rf .git
+ 1093  git status
+ 1094  git init
+ 1095  git remote add origin https://github.com/availabs/psMap
+ 1096  git add.
+ 1097  git add .
+ 1098  git commit -m 'initial commit'
+ 1099  git push -u origin master
+ 1100  git remote add origin https://github.com/availabs/psMap.git
+ 1101  rm -rf .git
+ 1102  git status
+ 1103  git init
+ 1104  git remote add origin https://github.com/availabs/psMap.git
+ 1105  git add .
+ 1106  git commit -m 'initial commit'
+ 1107  git push -u origin master
+ 1108  git add .
+ 1109  git commit -m 'initial commit'
+ 1110  git push -u origin master
+ 1111  branch -M main
+ 1112  git branch -M main
+ 1113  git push -u origin main
+ 1114  git rm --cached -r public/data
+ 1115  git add .
+ 1116  git commit -m 'edit gitignore'
+ 1117  git push -u origin master
+ 1118  git branch -M main
+ 1119  git push -u origin main
+ 1120  git rm --cached -r public/data
+ 1121  ls
+ 1122  cd public/
+ 1123  cd data
+ 1124  ll
+ 1125  cd ..
+ 1126  ll
+ 1127  rm -rf .git
+ 1128  git status
+ 1129  git init
+ 1130  ll
+ 1131  git status
+ 1132  rm -rf .git
+ 1133  git status
+ 1134  git init
+ 1135  git status
+ 1136  rm -rf .git
+ 1137  git status
+ 1138  git init
+ 1139  git status
+ 1140  git remote add origin https://github.com/availabs/psMap.git
+ 1141  git add.
+ 1142  git add .
+ 1143  git commit -m 'initial commit'
+ 1144  git push -u origin master
+ 1145  cd tasks/
+ 1146  ll
+ 1147  exit
+ 1148  npm start
+ 1149  npm start
+ 1150  cd tasks/
+ 1151  ll
+ 1152  node process_geojson.js > test_data_3.json
+ 1153  mv test_data_3.json ../public/data
+ 1154  cd ..
+ 1155  npm start
+ 1156  npm install recharts
+ 1157  npm start
+ 1158  history > log
+ 1159  yarn add @nivo/core @nivo/bar
+ 1160  npm start
+ 1161  cd tasks/
+ 1162  ll
+ 1163  node process_geojson.js > test_data_simple.json
+ 1164  mv test_data_simple.json ./public/data
+ 1165  mv test_data_simple.json './public/data'
+ 1166  mv test_data_simple.json ../public/data
+ 1167  npm start
+ 1168  cd ..
+ 1169  git add .
+ 1170  git commit -m 'heat-map'
+ 1171  git pull
+ 1172  git push
+ 1173  npm start
+ 1174  git add .
+ 1175  git commit -m 'add bar chart info box'
+ 1176  git pull
+ 1177  git push
+ 1178  npm start
+ 1179  ll
+ 1180  cd tasks/
+ 1181  ll
+ 1182  cd pireMap
+ 1183  ll
+ 1184  npm start
+ 1185  cd tasks/
+ 1186  ll
+ 1187  node process_geojson.js > test_data_clean.json
+ 1188  mv test_data_clean.json ../public/data
+ 1189  npm start
+ 1190  ssh alex@169.226.95.247
+ 1191  cd ../
+ 1192  cd public/data/
+ 1193  ls
+ 1194  scp Tucson_Police_Calls_for_Service_2018_2020_Open_Data4326.geojson alex@169.226.95.247:~/code/psMap/tasks/
+ 1195  cd ..
+ 1196  history > log_1
+ 1197  npm start
+ 1198  cd tasks/
+ 1199  ll
+ 1200  node process_geojson.js > test_data_2018.json
+ 1201  mv test_data_2018.json ./public/data
+ 1202  mv test_data_2018.json ../public/data
+ 1203  cd ..
+ 1204  cd public/
+ 1205  cd data/
+ 1206  ll
+ 1207  less test_data_2018.json 
+ 1208  cd ..
+ 1209  ll
+ 1210  npm start
+ 1211  git add .
+ 1212  git commit -m 'update barchart'
+ 1213  git pull
+ 1214  git push
+ 1215  cd public/data/
+ 1216  ;;
+ 1217  ll
+ 1218  less Tucson_Police_Incidents__2018.json 
+ 1219  cd public/data/
+ 1220  less test_data_18_20_new.json 
+ 1221  cd public/data
+ 1222  ll
+ 1223  tail Tucson_Police_Calls_for_Service_2018_2020_Open_Data4326_api_1.geojson 
+ 1224  cd ..
+ 1225  cd tasks/
+ 1226  ll
+ 1227  node process_geojson.js > test_data_all_api.json
+ 1228  mv test_data_all_api.json ../public/data/
+ 1229  npm start
+ 1230  npm start
+ 1231  node process_geojson.js > test_data_all_api_4.json
+ 1232  ll
+ 1233  cd AVAIL
+ 1234  cd code
+ 1235  ll
+ 1236  git clone https://github.com/nychealth/coronavirus-data.git
+ 1237  ll
+ 1238  git clone https://github.com/availabs/PAMap.git
+ 1239  cd tasks/
+ 1240  node process_geojson.js > test_data_all_api_merged.json
+ 1241  mv test_data_all_api_merged.json ../public/data/
+ 1242  npm start
+ 1243  ll
+ 1244  node process_geojson.js > test_data_all_api_merged_yearocc.json
+ 1245  mv test_data_all_api_merged_yearocc.json ../public/data/
+ 1246  npm start
+ 1247  cd ..
+ 1248  npm start
+ 1249  cd tasks/
+ 1250  ll
+ 1251  mv test_data_2018_esri.json ../public/data
+ 1252  cd ..
+ 1253  npm start
+ 1254  p
+ 1255  git add .
+ 1256  git commit -m 'update charts and data'
+ 1257  git pull
+ 1258  git push
+ 1259  npm start
+ 1260  cd public/data/
+ 1261  ll
+ 1262  less Tucson_Police_Calls_for_Service_2018_2020_Open_Data4326_api_merge.geojson
+ 1263  less test_data_2.json 
+ 1264  less test_data_3.json 
+ 1265  cd ..
+ 1266  cd tasks/
+ 1267  ll
+ 1268  node process_geojson.js > test_data_all_servicecall_api_merged.json
+ 1269  less test_data_all_servicecall_api_merged.json 
+ 1270  tail test_data_all_servicecall_api_merged.json 
+ 1271  tail -n 5 test_data_all_servicecall_api_merged.json 
+ 1272  tail -n 1 test_data_all_servicecall_api_merged.json 
+ 1273  mv test_data_all_servicecall_api_merged.json ../public/data
+ 1274  npm start
+ 1275  cd ..
+ 1276  npm start
+ 1277  cd tasks/
+ 1278  ll
+ 1279  node process_geojson > tucson_police_incidents_all-full.json
+ 1280  node process_geojson.js > tucson_police_incidents_all-full.json
+ 1281  ll
+ 1282  mv tucson_police_incidents_all-full.json ../public/data
+ 1283  node process_geojson.js > tucson_police_incidents_all-full.json
+ 1284  mv tucson_police_incidents_all-full.json ../public/dat
+ 1285  node uniqueType.js >test.json
+ 1286  node uniqueType.js >test1.json
+ 1287  node uniqueType.js >test2.json
+ 1288  node lengthCheck.js 
+ 1289  node uniqueType.js >testCode.json
+ 1290  node lengthCheck.js 
+ 1291  node process_geojson.js > tuscon_incidents_all.json
+ 1292  node uniqueType.js >testcrimeType.json
+ 1293  node uniqueType.js >testcrimeCategory.json
+ 1294  node lengthCheck.js 
+ 1295  node process_geojson_test.js > test.json
+ 1296  node lengthCheck_1.js 
+ 1297  node lengthCheck.js 
+ 1298  ll
+ 1299  cd tasks/
+ 1300  ll
+ 1301  cd dataScraper/
+ 1302  ll
+ 1303  node speciesScraper.js > test.json
+ 1304  cd tasks/
+ 1305  node lengthCheck.js 
+ 1306  npm start
+ 1307  node process_geojson_unique_full_list.js > test.json
+ 1308  less test.json 
+ 1309  cd tasks/
+ 1310  ll
+ 1311  node lengthCheck.js 
+ 1312  node process_geojson.js >test1.json
+ 1313  ll
+ 1314  mv tucson_api_merge_all_new.json ../public/data
+ 1315  npm start
+ 1316  node process_geojson.js >test1.json
+ 1317  node process_geojson.js >test2.json
+ 1318  mv test2.json '../public/data'
+ 1319  npm start\
+ 1320  npm start
+ 1321  git add .
+ 1322  git commmit -m 'dropdown try'
+ 1323  git commit -m 'dropdown try'
+ 1324  git pull
+ 1325  git push
+ 1326  npm start
+ 1327  cd tasks/
+ 1328  ll
+ 1329  node test.js
+ 1330  cd ..
+ 1331  npm start
+ 1332  git add .
+ 1333  git commit -m 'dropdown update'
+ 1334  git pull
+ 1335  git push
+ 1336  npm start
+ 1337  git add .
+ 1338  git commit -m 'chart update'
+ 1339  git pull
+ 1340  git push
+ 1341  npm start
+ 1342  git add .
+ 1343  git commit -m 'fix charts'
+ 1344  git pull
+ 1345  git push
+ 1346  npm start
+ 1347  yarn add @nivo/core @nivo/bump
+ 1348  npm start
+ 1349  git add .
+ 1350  git committe -m 'chart update'
+ 1351  git commit -m 'chart update'
+ 1352  git pull
+ 1353  git push
+ 1354  npm start
+ 1355  npm start
+ 1356  git add .
+ 1357  git commit -m 'update'
+ 1358  git pull
+ 1359  git push
+ 1360  npm start
+ 1361  ll
+ 1362  cd public/
+ 1363  cd data/
+ 1364  ll
+ 1365  tippecanoe -zg -o Tucson_police_incident.mbtiles --drop-densest-as-needed tucson_api_merge_all_new_1.json
+ 1366  cd ..
+ 1367  npm start
+ 1368  history > log_032421
+ 1369  git add .
+ 1370  git commit -m 'stuff'
+ 1371  git pull
+ 1372  git push
+ 1373  git add .
+ 1374  git commit -m 'stuff'
+ 1375  git push
+ 1376  git add .
+ 1377  git commit -m 'stuff'
+ 1378  git push
+ 1379  git add .
+ 1380  git commit -m 'stuff'
+ 1381  git push
+ 1382  ll
+ 1383  cd AVAUK
+ 1384  cd AVAIL/
+ 1385  ll
+ 1386  cd code/
+ 1387  ll
+ 1388  cd myapp/
+ 1389  ll
+ 1390  cd MasteringReact/
+ 1391  create-react-app
+ 1392  create-react-app counter-app
+ 1393  npm config set prefix /usr/local
+ 1394  sudo npm install -g create-react-app
+ 1395  create-react-app counter-app
+ 1396  ll
+ 1397  cd counter-app/
+ 1398  npm start
+ 1399  npm i bootstrap@4.1.1
+ 1400  npm start
+ 1401  git add .
+ 1402  rm -rf .git
+ 1403  git status
+ 1404  git init
+ 1405  git status
+ 1406  git remote add origin https://github.com/jwlee38/Vidly.git
+ 1407  git add .
+ 1408  git commit -m 'movie list table'
+ 1409  git push 
+ 1410  git push -u origin master
+ 1411  npm star
+ 1412  npm start
+ 1413  npm start
+ 1414  npm start
+ 1415  cd AVAIL/
+ 1416  cd code/
+ 1417  cd myapp/
+ 1418  cd MasteringReact/
+ 1419  ll
+ 1420  create-react-app vidly
+ 1421  cd vidly/
+ 1422  npm i bootstrap@4.1.1 font-awesome@4.7.0
+ 1423  npm start
+ 1424  npm start
+ 1425  npm i prop-types@15.6.2
+ 1426  npm i loadash@4.17.10
+ 1427  npm i loadash@4.17.20
+ 1428  npm i lodash@4.17.10
+ 1429  npm start
+ 1430  npm i prop-types@15.6.2
+ 1431  npm start
+ 1432  node -v
+ 1433  cd ..
+ 1434  sudo npm uninstall -g create-react-app
+ 1435  npm install -g update
+ 1436  npx create-react-app react-advanced_1
+ 1437  ll
+ 1438  cd react-advanced_1/
+ 1439  npm start
+ 1440  cd ..
+ 1441  ll
+ 1442  cd react-advanced/
+ 1443  npm start
+ 1444  npm i query-string@6.1.0
+ 1445  npm i react-router-dom@4.3.1
+ 1446  npm start
+ 1447  npm i
+ 1448  npm start
+ 1449  npm i react-router-dom@4.3.1
+ 1450  npm start
+ 1451  npm i query-string@6.1.0
+ 1452  npm start
+ 1453  globalprotect connect --portal uavpn.albany.edu
+ 1454  npm start
+ 1455  sudo apt-get install vlc -y
+ 1456  exit
+ 1457  npm i
+ 1458  npm start
+ 1459  npm i joi-browser@13.4
+ 1460  npm start
+ 1461  ll
+ 1462  cd AVAIL/
+ 1463  ll
+ 1464  cd code/
+ 1465  ll
+ 1466  cd myapp/
+ 1467  ll
+ 1468  cd MasteringReact/
+ 1469  ll
+ 1470  cd Section\ 8-\ Calling\ Backend\ Services/
+ 1471  ll
+ 1472  cd start/
+ 1473  ll
+ 1474  cd http-app/
+ 1475  ll
+ 1476  cd ..
+ 1477  cd MasteringReact/
+ 1478  ll
+ 1479  cd http-app/
+ 1480  npm i
+ 1481  npm start
+ 1482  npm i axios@0.18
+ 1483  npm start
+ 1484  cd AVAIL/
+ 1485  ll
+ 1486  cd code/
+ 1487  exit
+ 1488  conda
+ 1489  activate asimtest
+ 1490  source activate asimtest
+ 1491  conda activate asimtest
+ 1492  exit
+ 1493  sudo apt-get install Anaconda
+ 1494  conda
+ 1495  cd AVAIL/
+ 1496  cd code/
+ 1497  conda create -n asimtest python=3.8
+ 1498  conda activate asimtest
+ 1499  ls
+ 1500  conda install cytoolz numpy pandas psutil pyarrow numba
+ 1501  conda install -c anaconda pytables pyyaml
+ 1502  pip install openmatrix zbox requests
+ 1503  conda install pytest pytest -cov coveralls pycodestyle
+ 1504  conda install pytest pytest-cov coveralls pycodestyle
+ 1505  pip install pytest-regressions
+ 1506  conda install sphinx numpydoc sphinx_rtd_theme
+ 1507  conda install jupyterlab matplotlib geopandas descartes larch
+ 1508  pip install activitysim
+ 1509  pip install -U activitysim
+ 1510  conda install jupyterlab
+ 1511  jupyter notebook
+ 1512  cd activitysim/
+ 1513  exit
+ 1514  cd AVAIL/
+ 1515  cd code
+ 1516  ls
+ 1517  cd example/
+ 1518  ll
+ 1519  cd ..
+ 1520  mdir activitysim
+ 1521  mkdir activitysim
+ 1522  ll
+ 1523  ls
+ 1524  cd activitysim/
+ 1525  mkdir populationsim
+ 1526  cd populationsim/
+ 1527  conda create -n popsim python=3.8
+ 1528  conda activate popsim
+ 1529  conda install pytables
+ 1530  pip install populationsim
+ 1531  ls
+ 1532  ll
+ 1533  cd .
+ 1534  mkdir example_calm
+ 1535  ls
+ 1536  cd example_calm/
+ 1537  activate popsim
+ 1538  python run_populationsim.py
+ 1539  exit
+ 1540  cd AVAIL/code
+ 1541  cd activitysim/
+ 1542  conda create -n asimtest1 python=3.8
+ 1543  conda activate asimtest1
+ 1544  conda install cytoolz numpy pandas psutil pyarrow numba
+ 1545  conda install -c anaconda pytables pyyaml
+ 1546  pip install openmatrix zbox requests
+ 1547  conda install pytest pytest-cov coveralls pycodestyle
+ 1548  pip install pytest-regressions
+ 1549  conda install sphinx numpydoc sphinx_rtd_theme
+ 1550  conda install jupyterlab matplotlib geopandas descartes larch
+ 1551  pip install activitysim
+ 1552  pip install -U activitysim
+ 1553  jupiter notebook
+ 1554  conda install jupyterlab
+ 1555  jupiter notebook
+ 1556  jupyter notebook
+ 1557  conda deactivate asimtest1
+ 1558  exit
+ 1559  conda create -n popsim python=3.8
+ 1560  conda activate popsim
+ 1561  conda install pytables
+ 1562  pip install populationsim
+ 1563  conda -V
+ 1564  python run_populationsim.py
+ 1565  find -iname example_calm*
+ 1566  cd ..
+ 1567  ls
+ 1568  cd home/
+ 1569  cd jin/
+ 1570  ll
+ 1571  cd .local/share/Trash/files/
+ 1572  ll
+ 1573  cd populationsim/
+ 1574  ll
+ 1575  cd example_calm/
+ 1576  ll
+ 1577  ls
+ 1578  cd ..
+ 1579  ll
+ 1580  git clone https://github.com/RSGInc/odot_PopulationSim_resources.git
+ 1581  ls
+ 1582  ll
+ 1583  cd ..
+ 1584  cd activitysim/
+ 1585  conda activate asimtest
+ 1586  jupyter notebook
+ 1587  C
+ 1588  q
+ 1589  exit
+ 1590  npm start
+ 1591  cd src
+ 1592  ll
+ 1593  cd components/
+ 1594  ls
+ 1595  cd ../
+ 1596  ls
+ 1597  mkdir modules
+ 1598  git submodule add https://github.com/availabs/avl-map.git
+ 1599  ls
+ 1600  rm -rf avl-map/
+ 1601  ls
+ 1602  rm -rf .git
+ 1603  ls
+ 1604  cd modules/
+ 1605  git submodule add https://github.com/availabs/avl-map.git
+ 1606  cd ../
+ 1607  git init
+ 1608  cd ../
+ 1609  mv openFemaData/ avl-modeler
+ 1610  cd avl-modeler/
+ 1611  npm start
+ 1612  mkdir
+ 1613  mkdir repo
+ 1614  cd repo/
+ 1615  git clone https://github.com/ActivitySim/activitysim.git
+ 1616  cd ..
+ 1617  rf rm repo/
+ 1618  rf -rm repo
+ 1619  rm -rf repo
+ 1620  git clone https://github.com/ActivitySim/activitysim.git
+ 1621  ls
+ 1622  cd activitysim/
+ 1623  ll
+ 1624  cd activitysim/
+ 1625  ll
+ 1626  cd examples/
+ 1627  ll
+ 1628  cd example_mtc/
+ 1629  ls
+ 1630  cd output/
+ 1631  ls
+ 1632  cd ..
+ 1633  conda activate asimtest1
+ 1634  ls
+ 1635  deactivate asimtest1
+ 1636  conda deactivate asimtest1
+ 1637  conda deactivate
+ 1638  conda activate asimtest
+ 1639  ls
+ 1640  conda deactivate
+ 1641  conda activate asimtest1
+ 1642  jupyter notebook
+ 1643  cd activitysim/
+ 1644  ls
+ 1645  cd examples/
+ 1646  cd example_mtc/
+ 1647  cd notebooks/
+ 1648  ls
+ 1649  jupyter notebook
+ 1650  cd ..
+ 1651  jupyter notebook
+ 1652  cd activitysim/
+ 1653  jupyter notebook
+ 1654  cd ..
+ 1655  ll
+ 1656  cd external_resources/
+ 1657  git clone https://github.com/RSGInc/odot_PopulationSim_resources.git
+ 1658  sudo apt install pzip
+ 1659  ls
+ 1660  cd odot_PopulationSim_resources/
+ 1661  ll
+ 1662  cd training_package/
+ 1663  ll
+ 1664  p7zip -d TrainingPackage.7z 
+ 1665  sudo apt install p7zip
+ 1666  p7zip -d TrainingPackage.7z 
+ 1667  sudo apt-get install p7zip-full
+ 1668  7z x TrainingPackage.7z 
+ 1669  ls
+ 1670  ll
+ 1671  7za e TrainingPackage.7z 
+ 1672  ls -la
+ 1673  ls -lah
+ 1674  cd ../
+ 1675  ls
+ 1676  cd ../
+ 1677  ls
+ 1678  cd ../
+ 1679  ls
+ 1680  git status
+ 1681  cd populationsim/
+ 1682  ls
+ 1683  git status
+ 1684  ll
+ 1685  cd data/
+ 1686  ls
+ 1687  tippecanoe -o tl_2020_36_bg.mbtile -zg --drop-densest-as-needed tl_2020_36_bg.geojson
+ 1688  tippecanoe -o tl_2020_36_puma10.mbtile -zg --drop-densest-as-needed tl_2020_36_puma10.geojson 
+ 1689  cd ..
+ 1690  git clone https://github.com/availabs/openFemaData.git
+ 1691  ll
+ 1692  cd openFemaData/
+ 1693  ls
+ 1694  npm instal
+ 1695  cd ..
+ 1696  cd..
+ 1697  cd ..
+ 1698  ll
+ 1699  cd ..
+ 1700  ll
+ 1701  cd usr
+ 1702  cd ..
+ 1703  cd user
+ 1704  cd usr/
+ 1705  ll
+ 1706  cd ..
+ 1707  cd home/
+ 1708  ll
+ 1709  cd jin/
+ 1710  ll
+ 1711  find . -iname example_calm*
+ 1712  cd ..
+ 1713  ll
+ 1714  cd usr
+ 1715  ll
+ 1716  cd share/
+ 1717  ll
+ 1718  ls
+ 1719  find . -iname example_calm*
+ 1720  cd ..
+ 1721  find . -iname example_calm*
+ 1722  cd ..
+ 1723  ll
+ 1724  cd home/
+ 1725  cd .
+ 1726  cd ..
+ 1727  find . -iname example_calm*
+ 1728  cd ..
+ 1729  ls
+ 1730  cd home/
+ 1731  ls
+ 1732  cd jin/
+ 1733  cd AVAIL/code
+ 1734  ls
+ 1735  cd ac
+ 1736  cd activitysim/
+ 1737  ls
+ 1738  mkdir populationsim
+ 1739  ls
+ 1740  cd populationsim/
+ 1741  ls
+ 1742  git clone https://github.com/ActivitySim/populationsim.git
+ 1743  ls
+ 1744  cd populationsim/
+ 1745  ll
+ 1746  cd ..
+ 1747  git clone https://github.com/ActivitySim/populationsim.git
+ 1748  rm -rf populationsim/
+ 1749  ll
+ 1750  git clone https://github.com/ActivitySim/populationsim.git
+ 1751  ll
+ 1752  cd populationsim/
+ 1753  ll
+ 1754  cd example_calm
+ 1755  ll
+ 1756  conda activate popsim
+ 1757  python run_populationsim.py 
+ 1758  npm start
+ 1759  git status
+ 1760  less .git/config 
+ 1761  git add . 
+ 1762  git commit -m 'setup' 
+ 1763  git remote add origin https://github.com/availabs/avl-modeler.git
+ 1764  git push origin master
+ 1765  npm start
+ 1766  ll
+ 1767  cd src/modules/avl-map/
+ 1768  git pull origin master
+ 1769  git diff
+ 1770  npm start
+ 1771  npm install @turf/boolean-contains
+ 1772  npm start
+ 1773  cd ..
+ 1774  npm start
+ 1775  cd AVAIL/code/avl-modeler/
+ 1776  cd src/modules/avl-map/
+ 1777  git stash
+ 1778  git stash pop
+ 1779  git stash
+ 1780  git stash pop
+ 1781  git stash
+ 1782  git stash pop
+ 1783  git stash
+ 1784  git stash pop
+ 1785  git stash
+ 1786  git stash pop
+ 1787  git stash
+ 1788  cd ..
+ 1789  avl-map/git pull origin master
+ 1790  cd avl-map/
+ 1791  git pull origin master
+ 1792  git stash
+ 1793  git pull orgin master
+ 1794  git pull origin master
+ 1795  git status
+ 1796  git pull origin master
+ 1797  npm start
+ 1798  npm install @turf/boolean-contains
+ 1799  npm start
+ 1800  npm install @turf/boolean-contain
+ 1801  npm start
+ 1802  npm install @turf/turf
+ 1803  npm start
+ 1804  npm i --save lodash.flattend
+ 1805  npm start
+ 1806  cd AVAIL/code
+ 1807  ll
+ 1808  cd avl-modeler/
+ 1809  {sudo -H} npm i -g npm
+ 1810  cd AVAIL/
+ 1811  cd c
+ 1812  cd code/
+ 1813  ll
+ 1814  cd activitysim/
+ 1815  ll
+ 1816  cd populationsim/
+ 1817  ll
+ 1818  conda activate popsim
+ 1819  cd example_calm
+ 1820  ll
+ 1821  python run_populationsim.py 
+ 1822  npm start
+ 1823  history > log_071321
+ 1824  npm start
+ 1825  git add .
+ 1826  git commit -m 'filter BGs based on selected puma'
+ 1827  git pull
+ 1828  git push
+ 1829  sudo apt-get install filezilla
+ 1830  cd AVAIL/
+ 1831  cd code/
+ 1832  ls
+ 1833  cd activitysim/
+ 1834  ls
+ 1835  cd populationsim/
+ 1836  ls
+ 1837  cd example_calm
+ 1838  ll
+ 1839  cd data/
+ 1840  ls
+ 1841  awk -F'\t' -v OFS='\t' '
+ 1842    NR == 1 {print "ID", $0; next}
+ 1843    {print (NR-1), $0}
+ 1844  ' hh_seed_test.csv > output.csv
+ 1845  ls
+ 1846  cat output.csv 
+ 1847  awk -F'\t' -v OFS='\t' '
+ 1848    NR == 1 {print "hhnum", $0; next}
+ 1849    {print (NR-1), $0}
+ 1850  ' hh_seed_test.csv > hh_seed_2.csv
+ 1851  npm install file-saver --save
+ 1852  git add . 
+ 1853  git commite - m 'update DataGenerator'
+ 1854  git commit - m 'update DataGenerator'
+ 1855  git commit -m 'update DataGenerator'
+ 1856  git pull
+ 1857  git push
+ 1858  cd AV
+ 1859  cd AVAIL/
+ 1860  ls
+ 1861  cd code/
+ 1862  ls
+ 1863  cd activitysim/
+ 1864  ls
+ 1865  cd populationsim/
+ 1866  ls
+ 1867  cd example_calm
+ 1868  ls
+ 1869  py run_populationsim.py 
+ 1870  activate popsim
+ 1871  conda activate popsim
+ 1872  python run_populationsim.py 
+ 1873  LS
+ 1874  ls
+ 1875  python run_populationsim.py 
+ 1876  ls
+ 1877  less configs/controls.csv 
+ 1878  python run_populationsim.py 
+ 1879  less configs/controls.csv 
+ 1880  python run_populationsim.py 
+ 1881  [A
+ 1882  python run_populationsim.py 
+ 1883  python run_populationsim.py \
+ 1884  python run_populationsim.py
+ 1885  /usr/bin/python3
+ 1886  /usr/bin/python3 -m pip install -U autopep8
+ 1887  npm start
+ 1888  npm install --save-dev json-loader
+ 1889  cd AVAIL/
+ 1890  cd code
+ 1891  ls
+ 1892  cd activitysim/
+ 1893  ls
+ 1894  cd populationsim/
+ 1895  ls
+ 1896  cd example_calm
+ 1897  ls
+ 1898  python run_populationsim.py 
+ 1899  activate popsim
+ 1900  conda activate popsim
+ 1901  python run_populationsim.py 
+ 1902  clear
+ 1903  python run_populationsim.py 
+ 1904  clear
+ 1905  python run_populationsim.py 
+ 1906  clear
+ 1907  python run_populationsim.py 
+ 1908  clear
+ 1909  python run_populationsim.py 
+ 1910  clear
+ 1911  python run_populationsim.py 
+ 1912  clear
+ 1913  python run_populationsim.py 
+ 1914  clear
+ 1915  python run_populationsim.py 
+ 1916  clear
+ 1917  python run_populationsim.py
+ 1918  python run_populationsim.py 
+ 1919  ls
+ 1920  cd data
+ 1921  ls
+ 1922  cd ..
+ 1923  python run_populationsim.py 
+ 1924  ls
+ 1925  cd ../
+ 1926  ls
+ 1927  cd em
+ 1928  cd example_calm
+ 1929  python run_populationsim.py 
+ 1930  cd ..
+ 1931  ls
+ 1932  cd example_calm_albany/
+ 1933  python run_populationsim.py 
+ 1934  cd ..
+ 1935  ls
+ 1936  cd example_test/
+ 1937  python run_populationsim.py 
+ 1938  cd ..
+ 1939  cd example_calm_albany/
+ 1940  python run_populationsim.py 
+ 1941  cd AVAIL/code/
+ 1942  ls
+ 1943  cd activitysim/
+ 1944  ls
+ 1945  cd ..
+ 1946  avl-m
+ 1947  avl-modeler/
+ 1948  ls
+ 1949  activitysim/
+ 1950  cd activitysim/
+ 1951  cd populationsim/
+ 1952  ls
+ 1953  cd example_calm
+ 1954  conda activate popsim
+ 1955  ls
+ 1956  python run_populationsim.py 
+ 1957  cd ..
+ 1958  cd example_calm_albany/
+ 1959  python run_populationsim.py 
+ 1960  exit
+ 1961  cd AVAIL/code
+ 1962  cd activitysim/
+ 1963  ls
+ 1964  cd populationsim/
+ 1965  ls
+ 1966  cd example_calm_albany/
+ 1967  conda activate popsim
+ 1968  python run_populationsim.py 
+ 1969  q
+ 1970  quit
+ 1971  exit
+ 1972  cd ..
+ 1973  cd activitysim/
+ 1974  ls
+ 1975  cd populationsim/
+ 1976  ls
+ 1977  cd example_calm_albany/
+ 1978  ls
+ 1979  python run_populationsim.py 
+ 1980  conda activate popsim
+ 1981  python run_populationsim.py 
+ 1982  cd AVAIL/cde
+ 1983  cd AVAIL
+ 1984  cd code/
+ 1985  ls
+ 1986  cd avl-modeler/
+ 1987  ls
+ 1988  cd tasks/
+ 1989  ls
+ 1990  cd split_pums_data/
+ 1991  node --max-old-space-size=16384 spliter.js 
+ 1992  npm start
+ 1993  Prettify JSON
+ 1994  npm start
+ 1995  cd ..
+ 1996  cd AVAIL/code
+ 1997  cd avl-modeler/
+ 1998  git add . --all
+ 1999  git commit -m 'stuff-new'
+ 2000  git push
+ 2001  history > log_asof102121

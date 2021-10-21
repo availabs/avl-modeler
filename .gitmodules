@@ -1,0 +1,3 @@
+[submodule "src/modules/avl-map"]
+	path = src/modules/avl-map
+	url = https://github.com/availabs/avl-map.git
