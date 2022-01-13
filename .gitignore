@@ -13,7 +13,7 @@
 
 #data
 /public/data/*
-/public/population/1/*
+/public/population/*
 
 # misc
 .DS_Store

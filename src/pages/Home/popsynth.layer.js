@@ -27,14 +27,17 @@ class PopSynthLayer extends LayerContainer {
       id: "pumas",
       source: {
         type: "vector",
-        url: "https://tiles.availabs.org/data/census_puma10_ny_2020.json",
+        // url: "https://tiles.availabs.org/data/census_puma10_ny_2020.json",
+        url: "https://tiles.availabs.org/data/census_puma10_ny_2019.json",
       },
     },
     {
       id: "bgs",
       source: {
         type: "vector",
-        url: "https://tiles.availabs.org/data/census_block_groups_ny_2020.json",
+        // url: "https://tiles.availabs.org/data/census_block_groups_ny_2020.json",
+        url: "https://tiles.availabs.org/data/census_block_groups_ny_2019.json",
+        
       },
     },
   ];
@@ -42,17 +45,17 @@ class PopSynthLayer extends LayerContainer {
   layers = [
     {
       id: "BG",
-      "source-layer": "tl_2020_36_bg",
+      "source-layer": "tl_2019_36_bg",
       source: "bgs",
       type: "fill",
       paint: {
         "fill-color": "blue",
-        "fill-opacity": 0.5,
+        "fill-opacity": 0.2,
       },
     },
     {
       id: "BG-highlight",
-      "source-layer": "tl_2020_36_bg",
+      "source-layer": "tl_2019_36_bg",
       source: "bgs",
       type: "fill",
       paint: {
@@ -65,7 +68,7 @@ class PopSynthLayer extends LayerContainer {
 
     {
       id: "PUMA",
-      "source-layer": "tl_2020_36_puma10",
+      "source-layer": "tl_2019_36_puma10",
       source: "pumas",
       type: "fill",
       paint: {
@@ -76,7 +79,7 @@ class PopSynthLayer extends LayerContainer {
     },
     {
       id: "PUMA-show",
-      "source-layer": "tl_2020_36_puma10",
+      "source-layer": "tl_2019_36_puma10",
       source: "pumas",
       type: "line",
       paint: {
@@ -87,7 +90,7 @@ class PopSynthLayer extends LayerContainer {
     },
     {
       id: "PUMA-highlight",
-      "source-layer": "tl_2020_36_puma10",
+      "source-layer": "tl_2019_36_puma10",
       source: "pumas",
       type: "line",
       paint: {
@@ -106,11 +109,12 @@ class PopSynthLayer extends LayerContainer {
   ];
 
   onHover = {
-    layers: ["PUMA"],
+    layers: ["BG"],
     callback: (layerId, features, lngLat) => {
-      let { GEOID10, NAMELSAD10 } = features[0].properties;
-      // console.log("hover", GEOID10, NAMELSAD10, features[0]);
-      return [[GEOID10]];
+      console.log("hover",layerId, features, lngLat)
+      let { GEOID } = features[0].properties;
+      // console.log("hover", GEOID, features);
+      return [[GEOID]];
       // return [[NAMELSAD10], ["geoid_hover", GEOID10]];
     },
   };
@@ -118,14 +122,8 @@ class PopSynthLayer extends LayerContainer {
   onClick = {
     layers: ["PUMA"],
     callback: (layerId, features, lngLat) => {
+        // console.log("features----", features, lngLat);
       let { GEOID10, NAMELSAD10 } = features[0].properties;
-
-      //  console.log("features----", features, lngLat);
-      //let values = Object.values(lngLat);
-      // console.log("hover", GEOID10, NAMELSAD10, features[0]);
-
-
-      // select feature on click
 
       let selected = this.state.selectedPumas;
 
@@ -141,7 +139,9 @@ class PopSynthLayer extends LayerContainer {
         });
         console.log("remove", selected);
       }
-      //show selected pumas
+
+      //show selected PUMAs on map
+
       this.mapboxMap.setFilter("PUMA-highlight", [
         "in",
         "GEOID10",
@@ -182,20 +182,21 @@ class PopSynthLayer extends LayerContainer {
       );
 
       // let selectedFeaturesGeometry = selectedFeatures.map(
-      //   (d) => d.geometry.coordinates
+      //   (d) => d.geometry.coordinatesselectedFeaturesPuma
       // );
-      console.log("selectedFeaturesGeoidsPuma", selectedFeaturesGeoidsPuma);
-      console.log("selectedFeaturesGeometryPuma", selectedFeaturesGeometryPuma);
-      console.log(
-        "selectedFeaturesGeometryPumaOnly",
-        selectedFeaturesGeometryPumaOnly,
+      // console.log("selectedFeaturesGeoidsPuma", selectedFeaturesGeoidsPuma);
+      // console.log("selectedFeaturesGeometryPuma", selectedFeaturesGeometryPuma);
+      // console.log(
+      //   "selectedFeaturesGeometryPumaOnly",
+      //   selectedFeaturesGeometryPumaOnly,
         // JSON.stringify(selectedFeaturesGeometryPumaOnly[0])
-      ); //      JSON.stringify(selectedFeaturesGeometryPumaOnly)
+      // ); 
+      //      JSON.stringify(selectedFeaturesGeometryPumaOnly)
 
-      let pumaGeometry = selectedFeaturesGeometryPumaOnly[0];
+      // let pumaGeometry = selectedFeaturesGeometryPumaOnly[0];
+
 
       //3. create turf BG geometry ////////////////////////////////////////////////////////////////
-
 
       var featuresBgs = this.mapboxMap.queryRenderedFeatures({   //change it to querySourceFeatures?
         layers: ["BG"],
@@ -238,19 +239,19 @@ class PopSynthLayer extends LayerContainer {
       //5.map list of contained bgs into array of bg geoids////////////////////////////////////////////////////////////////
 
       //360010001002--completely contain test 
-      let bgGeometry = turf.polygon([
-        [
-          [-73.74195098876953, 42.67751371026449],
-          [-73.74040603637695, 42.67688269641377],
-          [-73.73920440673828, 42.676251676155346],
-          [-73.73628616333008, 42.67511582354274],
-          [-73.73937606811523, 42.67031977251909],
-          [-73.74521255493164, 42.672339207533525],
-          [-73.74418258666992, 42.675746855335035],
-          [-73.74383926391602, 42.677135102722985],
-          [-73.74195098876953, 42.67751371026449],
-        ],
-      ]);
+      // let bgGeometry = turf.polygon([
+      //   [
+      //     [-73.74195098876953, 42.67751371026449],
+      //     [-73.74040603637695, 42.67688269641377],
+      //     [-73.73920440673828, 42.676251676155346],
+      //     [-73.73628616333008, 42.67511582354274],
+      //     [-73.73937606811523, 42.67031977251909],
+      //     [-73.74521255493164, 42.672339207533525],
+      //     [-73.74418258666992, 42.675746855335035],
+      //     [-73.74383926391602, 42.677135102722985],
+      //     [-73.74195098876953, 42.67751371026449],
+      //   ],
+      // ]);
 
       // 1. manual test /////
       // let containsBgs = turf.booleanContains(pumaGeometry, bgGeometry);
@@ -265,65 +266,6 @@ class PopSynthLayer extends LayerContainer {
       // 3.reduce test ///////
 
       console.time('reduceOverlap')
-
-      //original /////
-      // let containsBgs = []
-
-      // Object.values(selectedFeaturesPuma).map((feature) => {
-
-      //   containsBgs = Object.keys(featuresGeometryBgs)
-      //     .reduce((acc, geoid) => {
-      //       // console.log('check bg', geoid, featuresGeometryBgs[geoid])
-      //       // //let polygon = turf.polygon(featuresGeometryBgs[geoid])
-      //       let results = turf.booleanPointInPolygon(
-      //         turf.centroid(featuresGeometryBgs[geoid]),
-      //         feature
-
-      //       );
-
-      //       if (results) {
-      //         acc.push(geoid)
-      //       }
-      //       return acc;
-      //     }, []);
-
-      // })
-
-      // let featuresGeometryBgs = featuresBgs.reduce((acc, feature) => {
-      //   //let geoid = feature.map((d) => d.properties.GEOID);
-      //   // console.log("geoid", geoid);
-      //   // acc[geoid] = feature.geometry.coordinates;
-      //   acc[feature.properties.GEOID] = feature
-      //   return acc;
-      // }, {});
-
-      // version 2 to fix 
-//       let containsBgs = Object.values(selectedFeaturesPuma).map((feature) => {
-        
-// console.log('feature--', feature.properties.GEOID10 )
-
-//         return Object.keys(featuresGeometryBgs)
-//           .reduce((acc, geoid) => {
-//             // console.log('check bg', geoid, featuresGeometryBgs[geoid])
-//             // //let polygon = turf.polygon(featuresGeometryBgs[geoid])
-//             let results = turf.booleanPointInPolygon(
-//               turf.centroid(featuresGeometryBgs[geoid]),
-//               feature
-
-//             );
-
-//             if (results) {
-             
-//             feature.properties.GEOID10 = acc.push(geoid)
-
-//             // let selectedBgsIds =[] 
-//             // selectedBgsIds.push(geoid)
-//             // acc[feature.properties.GEOID10] = selectedBgsIds.push(geoid)
-
-//             }
-//             return acc;
-//           }, []);
-//       })
 
 
 //reformat to get pumaID
@@ -360,11 +302,12 @@ class PopSynthLayer extends LayerContainer {
         
 
 
-
       console.timeEnd('reduceOverlap')
 
+      console.log('PUMAandBgs', PUMAandBgs)
+
       let newContainsBgs = Object.values(PUMAandBgs).map(p=>p)
-      // console.log('containsBgs', containsBgs, ...containsBgs, PUMAandBgs, flatten(newContainsBgs))
+       console.log('containsBgs', PUMAandBgs, flatten(newContainsBgs))
              
 
       this.updateState({
@@ -448,8 +391,8 @@ class PopSynthLayer extends LayerContainer {
   // fetchData() {}
 
   render(map) {
-    let filter = this.state.selectedPumas;
-    console.log("map render---", this.state, this.state.selectedPumas, filter);
+    // let filter = this.state.selectedPumas;
+    // console.log("map render---", this.state, this.state.selectedPumas, filter);
 
     // map.setFilter("fill-color", filter);
 

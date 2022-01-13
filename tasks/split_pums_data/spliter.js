@@ -42,8 +42,8 @@ const options = {headers: true};
         
 
 fastCsv
-    .parseFile('../../public/data/psam_h36.csv', options) // for household
-    // .parseFile('../../public/data/psam_p36.csv', options)   // for person
+    // .parseFile('../../public/data/psam_h36.csv', options) // for household
+    .parseFile('../../public/data/psam_p36.csv', options)   // for person
     .on('data', d => {
         if (!datas[d.PUMA])
             datas[d.PUMA] = [];
@@ -58,8 +58,8 @@ fastCsv
             // For each ID, write a new CSV file
             fastCsv
                 .write(datas[id], options)
-               .pipe(fs.createWriteStream(`../../public/data/psam_h36${id}.csv`));  //hh
-                // .pipe(fs.createWriteStream(`../../public/data/psam_p36${id}.csv`));   //person
+            //    .pipe(fs.createWriteStream(`../../public/data/psam_h36${id}.csv`));  //hh
+                .pipe(fs.createWriteStream(`../../public/data/psam_p36${id}.csv`));   //person
         })
     })
 

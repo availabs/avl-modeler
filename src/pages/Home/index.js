@@ -54,14 +54,14 @@ const MapPage = {
         styles: [
           {
             name: "Light",
-            // style: "mapbox://styles/am3081/ckm86j4bw11tj18o5zf8y9pou",
-            style: "mapbox://styles/am3081/cjya70364016g1cpmbetipc8u",
+            style: "mapbox://styles/am3081/ckm86j4bw11tj18o5zf8y9pou",
+            // style: "mapbox://styles/am3081/cjya70364016g1cpmbetipc8u", 
             
             
           },
         ],
       },
-      // layers: [PopSynthLayerFactory()],
+  
       layers: [PopvizLayerFactory()],
     },
     wrappers: ["avl-falcor"],

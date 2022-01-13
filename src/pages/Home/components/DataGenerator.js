@@ -31,7 +31,8 @@ const DataGenerator = ({ layer }) => {
 
         console.time('generate controlControl')
         //let controlConfig = generateControlConfig(controlData)
-        let controlConfig = controlConfigJson
+        //expression is hard to generate so decide to manually creat object json and import
+        let controlConfig = controlConfigJson  
         console.timeEnd('generate controlControl')
 
         console.log('getting data----', crosswalkData, seedData, controlData, controlConfig)
@@ -152,13 +153,15 @@ const DataGenerator = ({ layer }) => {
 
 
   //  console.log('output----', process, generateCrosswalk() )
+  //selectedPumas--somehow it become 5 digit (maybe csv PUMA column settting?)
+  console.log('selectedPumas---', layer.state.selectedPumas )
 
     const generateSeedData = ()  => {
         console.log('fetching households')
 
         let selectedPumas = layer.state.selectedPumas  
 
-        console.log('selectedPumas---', selectedPumas)
+        // console.log('selectedPumas---', selectedPumas)
 
         const households = selectedPumas.map(pumaId => {
             return fetch(`/data/psam_h${pumaId}.csv`)
@@ -189,18 +192,6 @@ const DataGenerator = ({ layer }) => {
             .then(pumsData => {
                 console.timeEnd('load pums')
               
-               // console.log('filter this data and set it someplace', pumsData) 
-
-            //    pumsData.map(d=> {
-            //        console.log('data--', d.data)
-            //     //   if() 
-            //     //   let hhdata=[]
-            //     //   hhdata.push(d.data)
-                 
-            //     //   let pdata=[]
-            //     //   pdata.push(d.data)
-
-            //     } )
                 
                 let hhdata = flatten(pumsData
                     .filter(d => d.type === 'h')
@@ -232,22 +223,9 @@ const DataGenerator = ({ layer }) => {
 
                 pdata.forEach(d=> d.hhnum = hhnumLookup[d.SERIALNO]) // better than .map b/c no need to return
                
-                let test = pdata.map(d => d.hhnum = hhnumLookup[d.SERIALNO] )
+                // let test = pdata.map(d => d.hhnum = hhnumLookup[d.SERIALNO] )
 
-                console.log('after p.hhnum', pdata, test)
-
-
-                // let test = hhdata[0].map(hd => {
-                //     pdata[0].map(pd => {
-                //         if(hd.SERIALNO === pd.SERIALNO) 
-
-                //         return {
-                //             pd.hhnum = hd.hhnum
-                //         } 
-
-                //     })
-
-                // })
+                console.log('after p.hhnum', pdata)
 
                 //console.log('seedPdata----', pdata,pdata[0], flatten(pdata), newpdata, test)
               //console.log('seedData_flatten' ,flatten(hhdata), pdata[0], flatten(pdata)),
@@ -352,7 +330,7 @@ const DataGenerator = ({ layer }) => {
         let tracts = flattenBgs.map(d =>d.slice(0, -1))
         let uniqueTracts = [...new Set(tracts)];
         
-       // console.log("bgs-----", bgs,flattenBgs, uniqueTracts)
+        //console.log("bgs-----", bgs,flattenBgs, flattenBgs.length, uniqueTracts, uniqueTracts.length)
 
         console.time('call acs')
 
@@ -373,7 +351,9 @@ const DataGenerator = ({ layer }) => {
        )
         .then(d => {
             console.timeEnd('call acs')
-            return falcor.getCache()
+            let acsFalcorData = falcor.getCache()
+            // console.log('acsFalcorData',acsFalcorData)
+            return acsFalcorData
              })
 
         // do final formating to get the final output
@@ -550,8 +530,8 @@ const DataGenerator = ({ layer }) => {
                      let hhinc4V = values[0].B19001_014E+values[0].B19001_015E
                      let hhinc5V = values[0].B19001_016E
                      let hhinc6V = values[0].B19001_017E
-                     let hhbaseV = values[0].B01003_001E
-                     let popbaseV = values[0].B25001_001E
+                     let hhbaseV = values[0].B25001_001E
+                     let popbaseV = values[0].B01003_001E
 
                      //  console.log ('BG keys and values', key, values )
                                 return{
@@ -631,7 +611,8 @@ const DataGenerator = ({ layer }) => {
                 })
             
             })
-           // console.log("BG_data--", BgData)
+            
+            console.log("Control_data--", BgData,tractData )
 
             return { control_tracts:tractData[0], control_bgs:BgData[0]}
         })

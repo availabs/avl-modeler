@@ -1,6 +1,9 @@
 import { LayerContainer } from "modules/avl-map/src";
 import Papa from 'papaparse';
-import syntheticTable from './components/syntheticTable';
+import OverviewTable from './components/OverviewTable';
+import SelectedTable from "./components/SelectedTable";
+import VarDropDown from "./components/VarDropDown";
+
 
 class PopVizLayer extends LayerContainer {
   // constructor(props) {
@@ -15,7 +18,7 @@ class PopVizLayer extends LayerContainer {
     selectedBlockGroups: [],
     selectedPumasBgs:{},
     synthData:{},
-    BgsSynthPop:[]
+    BgsSynthPop:[],
   
   };
 
@@ -26,14 +29,16 @@ class PopVizLayer extends LayerContainer {
       id: "pumas",
       source: {
         type: "vector",
-        url: "https://tiles.availabs.org/data/census_puma10_ny_2020.json",
+        // url: "https://tiles.availabs.org/data/census_puma10_ny_2020.json",
+        url: "https://tiles.availabs.org/data/census_puma10_ny_2019.json",
       },
     },
     {
       id: "bgs",
       source: {
         type: "vector",
-        url: "https://tiles.availabs.org/data/census_block_groups_ny_2020.json",
+        // url: "https://tiles.availabs.org/data/census_block_groups_ny_2020.json",
+        url: "https://tiles.availabs.org/data/census_block_groups_ny_2019.json",
       },
     },
   ];
@@ -41,7 +46,7 @@ class PopVizLayer extends LayerContainer {
   layers = [
     {
       id: "BG",
-      "source-layer": "tl_2020_36_bg",
+      "source-layer": "tl_2019_36_bg",
       source: "bgs",
       type: "fill",
       paint: {
@@ -51,7 +56,7 @@ class PopVizLayer extends LayerContainer {
     },
     {
       id: "BG-highlight",
-      "source-layer": "tl_2020_36_bg",
+      "source-layer": "tl_2019_36_bg",
       source: "bgs",
       type: "fill",
       paint: {
@@ -63,8 +68,21 @@ class PopVizLayer extends LayerContainer {
     },
 
     {
+      id: "BG-selected",
+      "source-layer": "tl_2019_36_bg",
+      source: "bgs",
+      type: "line",
+      paint: {
+        "line-color": 'yellow',
+        "line-width": 2,
+      },
+      filter: ["in", "GEOID", ""],
+    },
+
+
+    {
       id: "PUMA",
-      "source-layer": "tl_2020_36_puma10",
+      "source-layer": "tl_2019_36_puma10",
       source: "pumas",
       type: "fill",
       paint: {
@@ -75,7 +93,7 @@ class PopVizLayer extends LayerContainer {
     },
     {
       id: "PUMA-show",
-      "source-layer": "tl_2020_36_puma10",
+      "source-layer": "tl_2019_36_puma10",
       source: "pumas",
       type: "line",
       paint: {
@@ -86,7 +104,7 @@ class PopVizLayer extends LayerContainer {
     },
     {
       id: "PUMA-highlight",
-      "source-layer": "tl_2020_36_puma10",
+      "source-layer": "tl_2019_36_puma10",
       source: "pumas",
       type: "line",
       paint: {
@@ -111,22 +129,35 @@ class PopVizLayer extends LayerContainer {
 
   infoBoxes = [
     {
-      Component: syntheticTable,
+      Component: OverviewTable,
       show: true,
-    },];
+    },
+    {
+      Component:VarDropDown,
+      show: true,
+    },
+
+    {
+      Component:SelectedTable,
+      show: true,
+    },
+  ];
+
 
   households = {};
 
   persons = {};
+  
 
-
+  BgGeoids = [];
   
   onHover = {
-    layers: ["PUMA"],
+    layers: ["BG"],
     callback: (layerId, features, lngLat) => {
-      let { GEOID10, NAMELSAD10 } = features[0].properties;
+      // console.log(layerId, features)
+      let { GEOID } = features[0].properties;
       // console.log("hover", GEOID10, NAMELSAD10, features[0]);
-      return [[GEOID10]];
+      return [[GEOID]];
       // return [[NAMELSAD10], ["geoid_hover", GEOID10]];
     },
   };
@@ -138,19 +169,52 @@ class PopVizLayer extends LayerContainer {
 
 
   onClick = {
-    layers: ["PUMA"],
+    layers: ["BG"],
     callback: (layerId, features, lngLat) => {
-   
-  
+      console.log("onClick",layerId, features, lngLat)
+      let { GEOID } = features[0].properties;
+       console.log("onClick", GEOID, features);
+
+
+
+       let selected = this.state.selectedBlockGroups;
+
+       if (!selected.includes(GEOID)) {
+         this.updateState({
+          selectedBlockGroups: [...selected, GEOID],
+         });
+         console.log("add", selected);
+       } else {
+         let removed = selected.filter((item) => item !== GEOID);
+         this.updateState({
+          selectedBlockGroups: [...removed],
+         });
+         console.log("remove", selected);
+       }
+       //show selectedBlockGroups 
+       this.mapboxMap.setFilter("BG-selected", [
+         "in",
+         "GEOID",
+         ...this.state.selectedBlockGroups,
+       ]);
+
+
+
+      // return [[GEOID]];
+      // return [[NAMELSAD10], ["geoid_hover", GEOID10]];
     },
   };
+
+
+
+  
   // init(map) {
   //   console.log("init---", this.state, this.state.BgsSynthPop);
   // }
 
  fetchData() {
     let fetches = ['synthetic_households','synthetic_persons'].map(v => {
-          return fetch(`/population/1/${v}.csv`)
+          return fetch(`/population/4/${v}.csv`)
             //.then parse to json
             //.then set this.households = data
             .then(r=>r.text())
@@ -162,18 +226,17 @@ class PopVizLayer extends LayerContainer {
 
        })
 
+
     return Promise.all([...fetches])
     
     .then(synData =>{
       
-        // console.log('synData',synData, synData[0].data.data )
+         console.log('synData',synData, synData[0].data.data )
 
       this.households = synData[0].data.data
-      this.persons = synData[1].data.data
-
-
+      this.persons = synData[1].data.data.filter(d => d.per_num)
     
-
+     //Fo selected BGs visualization on map 
       let synHouseholds = this.households
       let householdsBgs = synHouseholds.reduce((acc,obj)=>{
         acc[obj.household_id]=obj.BG;
@@ -184,8 +247,8 @@ class PopVizLayer extends LayerContainer {
       let Bgs = Object.values(householdsBgs)
       let unigueBgsOrigin = [...new Set(Bgs)]
 
-
-      let uniqueBgs = unigueBgsOrigin //reformat bgIDs to standard FIPS code
+      //temporarly reformat bgIDs to standard FIPS code to be worked with vector tile's GeoID
+      let uniqueBgs = unigueBgsOrigin 
       .filter(d => d)
       .map(d => `36001${d.padStart(7,'0')}`);
       // console.log('blockgroups', uniqueBgs)
@@ -200,7 +263,6 @@ class PopVizLayer extends LayerContainer {
   }
 
 
-  
 
   render(map) {
     let filter = this.state.BgsSynthPop;
