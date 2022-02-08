@@ -168,19 +168,13 @@ const VarDisplay = ({ variable, layer }) => {
               </tr>
             );
           })}
-          <tr>
-            <td>Total</td>
-            <td>{variable.bins.reduce((out,curr,i) => {
-              out += binnedSynPop[i].length
-              return out
-            },0).toLocaleString()}</td>
+          {/* <tr>
+            <td>{variable.bins[variable.bins.length - 1]}+</td>
             <td>
-              {variable.bins.reduce((out,curr,i) => {
-              out += binnedACS[i]
-              return out
-            },0).toLocaleString()}
+              &nbsp;&nbsp;&nbsp;{binnedSynPop[variable.bins.length].length}
             </td>
-          </tr>
+            <td>&nbsp;&nbsp;&nbsp;{binnedACS[variable.bins.length]}</td>
+          </tr> */}
         </tbody>
       </table>
     </div>
