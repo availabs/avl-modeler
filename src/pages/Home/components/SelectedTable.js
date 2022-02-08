@@ -18,8 +18,8 @@ const SelectedTable = ({ layer }) => {
     let synHouseholds = layer.households
     let synPersons = layer.persons
 
-    console.log('synHouseholds', synHouseholds)
-    console.log('synPersons', synPersons)
+    // console.log('synHouseholds', synHouseholds)
+    // console.log('synPersons', synPersons)
 
 
 
@@ -34,14 +34,14 @@ const SelectedTable = ({ layer }) => {
           return acc;
     }, {} );
 
-console.log('householdsBgs', householdsBgs )
+//console.log('householdsBgs', householdsBgs )
 // console.log('personsBgs',  personsBgs )
 
     // get all the unique BGs to view selected BGs on map
     let Bgs = Object.values(householdsBgs)
     let uniqueBgsOrigin = [...new Set(Bgs)]
 
-    console.log('householdsBgs--', householdsBgs,  uniqueBgsOrigin)
+    //console.log('householdsBgs--', householdsBgs,  uniqueBgsOrigin)
 
     // this.props.parentCallback(uniqueBgsOrigin)
 
@@ -96,8 +96,8 @@ console.log('householdsBgs', householdsBgs )
     //reformat SelectedBgs' geoid to short geoid  and filter only selected blockgroups 
     let newSelectedBGs= selectedBlockGroups.map(key=> parseInt(key.slice(-7)).toString())
 
-    console.log('BgsHouseholds', BgsHouseholds, selectedBlockGroups, newSelectedBGs)
-    console.log('BgsPersons', BgsPersons)
+    // console.log('BgsHouseholds', BgsHouseholds, selectedBlockGroups, newSelectedBGs)
+    // console.log('BgsPersons', BgsPersons)
 
     let selectedBgsHouseholds = Object.keys(BgsHouseholds)
                             .filter(Bg=>newSelectedBGs.includes(Bg))
@@ -119,8 +119,8 @@ console.log('householdsBgs', householdsBgs )
     let selectedSynHouseholds = Object.values(selectedBgsHouseholds).flat(1)
     let selectedSynPersons = Object.values(selectedBgsPersons).flat(1)
 
-    console.log( 'selectedBgsHouseholds', selectedBgsHouseholds, selectedSynHouseholds)
-    console.log( 'selectedBgsPersons', selectedBgsPersons, selectedSynPersons)
+    // console.log( 'selectedBgsHouseholds', selectedBgsHouseholds, selectedSynHouseholds)
+    // console.log( 'selectedBgsPersons', selectedBgsPersons, selectedSynPersons)
 
 
 
@@ -203,7 +203,7 @@ console.log('householdsBgs', householdsBgs )
     let acsTotals = useMemo(() => {
   
         let output = falcorCache
-        console.log('falcorCache', falcorCache, Object.values(output))
+       // console.log('falcorCache', falcorCache, Object.values(output))
         let bgData = get(falcorCache,'acs',{})
         // let geoids= Object.keys(bgData)
         

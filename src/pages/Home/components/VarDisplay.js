@@ -5,34 +5,20 @@ import get from "lodash.get";
 
 const VarDisplay = ({ variable, layer }) => {
   const [acsOutput, setAcsOutput] = useState({});
-
   const { falcor, falcorCache } = useFalcor();
 
   let synPopHH = layer.households;
   let synPopPersons = layer.persons;
-  // let syntheticData = layer[variable.type]
-
   const synPopType = variable.synpop_type;
-
-  console.log("synPopHH", synPopHH);
-  console.log("synPopType", synPopType);
 
   //filter out N/A
   const selectedSynPop = (arr) => arr.filter((el) => el[variable.var]);
+  console.log('filtered hh', synPopHH.filter((el) => !el[variable.var]))
 
-  console.log("selectedSynPop", selectedSynPop(synPopHH));
+  console.log("filter compare", selectedSynPop(synPopHH).length, synPopHH.length);
 
-  // const bins = [...variable.bins, Infinity];
-  // const bins = [...variable.bins];
   const bins = [...variable.bins.map((d) => d.value)];
-
-  console.log(
-    "bins--",
-    bins,
-    bins.map(() => [])
-  );
-
-  // console.log('test---', [bins.map(()=>[])], bins)
+  const binsTest = variable.binsCompare.map(d => Function('v', d.comp))
 
   let selectedSynPopArray =
     synPopType === "households"
@@ -46,15 +32,17 @@ const VarDisplay = ({ variable, layer }) => {
       const value = parseInt(c[variable.var]);
 
       for (let i = 0; i < bins.length; i++) {
-        if (value < bins[i] || value === bins[i]) {
-          a[i].push(value);
+        if (binsTest[i](value)) {
+          a[i]+= +1
           break;
         }
       }
       return a;
     },
-    bins.map(() => [])
+    bins.map(() => 0)  
   );
+ 
+
 
   let householdsBgs = selectedSynPopArray.reduce((acc, obj) => {
     acc[obj.household_id] = obj.BG;
@@ -158,12 +146,12 @@ const VarDisplay = ({ variable, layer }) => {
           </tr>
         </thead>
         <tbody>
-          {variable.bins.map((bin, i) => {
+          {variable.binsCompare.map((bin, i) => {
             // {flatten(binsKeys).map((bin, i) => {
             return (
               <tr>
                 <td>{bin.name}</td>
-                <td>&nbsp;&nbsp;&nbsp;{binnedSynPop[i].length}</td>
+                <td>&nbsp;&nbsp;&nbsp;{binnedSynPop[i]}</td>
                 <td>&nbsp;&nbsp;&nbsp;{binnedACS[i]}</td>
               </tr>
             );
@@ -171,7 +159,7 @@ const VarDisplay = ({ variable, layer }) => {
           <tr>
             <td>Total</td>
             <td>{variable.bins.reduce((out,curr,i) => {
-              out += binnedSynPop[i].length
+              out += binnedSynPop[i]
               return out
             },0).toLocaleString()}</td>
             <td>

@@ -13,7 +13,6 @@
          "75000":["B19001_012E"],
         "125000":["B19001_013E","B19001_014E"],
         "125000+":["B19001_015E","B19001_016E", "B19001_017E"]
-
        },
     
        "bins":[
@@ -40,7 +39,7 @@
         
       ],
        
-      "binsTest":[
+      "binsCompare":[
          {"name":"< 15,000", "comp": "return v < 15000"},
          {"name":"< 25,000", "comp": "return v >= 15000 && v < 25000"},
          {"name":"< 35,000", "comp": "return v >= 25000 && v < 35000"},
@@ -48,7 +47,7 @@
          {"name":"< 60,000", "comp": "return v >= 45000 && v < 60000"},
          {"name":"< 75,000", "comp": "return v >= 60000 && v < 75000"},
          {"name":"< 125,000", "comp": "return v >= 75000 && v < 125000"},
-         {"name":"> 125,000", "comp": "return v > 125000"}
+         {"name":"> 125,000", "comp": "return v >= 125000"}
       
       ]
        
@@ -76,6 +75,12 @@
           {"name":"1 vehicle", "value":1 },
           {"name":"2 vehicles", "value":2 },
           {"name":"3+ vehicles", "value":6 }
+         ],
+       "binsCompare":[
+          {"name":"0 vehicle", "comp": "return v === 0" },
+          {"name":"1 vehicle", "comp": "return v === 1" },
+          {"name":"2 vehicles", "comp": "return v === 2"  },
+          {"name":"3+ vehicles", "comp": "return v >= 3"  }
          ]
     },
 
@@ -174,6 +179,7 @@
       "var": "NP",
       "acs_type":"Tract",
       "acs_vars":{ 
+         "0": [""],
          "1": ["S2501_C01_002E"],
          "2" : ["S2501_C01_003E"],
          "3" : ["S2501_C01_004E"],
@@ -188,7 +194,16 @@
          {"name":"3 person", "value":3 },
          {"name":"4+ person", "value":20 }
 
-         ]
+         ],
+
+      "binsCompare":[
+          {"name":" 0 person", "comp": "return v === 0" },
+         {"name":" 1 person", "comp": "return v === 1" },
+         {"name":"2 person",  "comp": "return v === 2" },
+         {"name":"3 person",  "comp": "return v === 3" },
+         {"name":"4+ person", "comp": "return v >= 4" }
+
+      ]
    },
 
    "WIF":{
