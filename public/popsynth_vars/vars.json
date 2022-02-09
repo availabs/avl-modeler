@@ -27,17 +27,6 @@
    
       ],
 
-      "binsOld":[
-         15000,
-         25000,
-         35000,
-         45000,
-         60000,
-         75000,
-        125000,
-        999999
-        
-      ],
        
       "binsCompare":[
          {"name":"< 15,000", "comp": "return v < 15000"},
@@ -125,6 +114,18 @@
          {"name":"<= 2013", "value":17 },    
          {"name":"<= 2019", "value":23}    
 
+      ],
+      "binsCompare":[
+         {"name":"<= 1939", "comp":"return v === 1" },   
+         {"name":"<= 1949", "comp":"return v === 2" },       
+         {"name":"<= 1959", "comp":"return v === 3" },    
+         {"name":"<= 1969", "comp":"return v === 4" },    
+         {"name":"<= 1979", "comp":"return v === 5" },    
+         {"name":"<= 1989", "comp":"return v === 6" },    
+         {"name":"<= 1999", "comp":"return v === 7" },    
+         {"name":"<= 2009", "comp":"return v > 7 && v <= 13" },   
+         {"name":"<= 2013", "comp":"return v > 13 && v <= 17" },    
+         {"name":"<= 2019", "comp":"return v > 17"}    
       ]
    
    },
@@ -165,6 +166,20 @@
         {"name":"<= 900", "value":900 },    
         {"name":"<= 1500", "value":1500 },    
         {"name":"> 1500", "value":9999999 } 
+         
+
+     ],
+     
+
+
+     "binsCompare":
+     [
+        {"name":"<= 300", "comp":"return v <= 300"},   
+        {"name":"<= 500", "comp":"return v > 300 && v <= 500" },       
+        {"name":"<= 700", "comp":"return v > 500 && v <= 700" },    
+        {"name":"<= 900", "comp":"return v > 700 && v <= 900" },    
+        {"name":"<= 1500", "comp":"return v > 900 && v <= 1500" },    
+        {"name":"> 1500", "comp":"return v > 1500" } 
          
 
      ]
@@ -223,6 +238,13 @@
          {"name":"1 workers", "value":1 },
          {"name":"2 workers", "value":2 },
          {"name":"3+ workers", "value":3 }
+      ],
+   
+      "binsCompare":[
+         {"name":"No workers", "comp":"return v === 0" },
+         {"name":"1 workers", "comp":"return v === 1" },
+         {"name":"2 workers", "comp":"return v === 2" },
+         {"name":"3+ workers", "comp":"return v === 3" }
       ]
    },
 
@@ -255,6 +277,18 @@
          {"name":"> 500", "value":999 } 
             
 
+      ],
+   
+      "binsCompare":
+      [
+         {"name":"<= 50", "comp":"return v <= 50" },   
+         {"name":"<= 100", "comp":"return v > 50 && v <= 100" },       
+         {"name":"<= 200", "comp":"return v > 100 && v <= 200" },    
+         {"name":"<= 300", "comp":"return v > 200 && v <= 300" },    
+         {"name":"<= 500", "comp":"return v > 300 && v <= 500" },    
+         {"name":"> 500", "comp":"return v > 500" } 
+            
+
       ]
    },
 
@@ -273,6 +307,14 @@
       [
          {"name":"Male", "value":1 },   
          {"name":"Female", "value":2 }
+            
+
+      ],
+      
+      "binsCompare":
+      [
+         {"name":"Male", "comp":"return v === 1" },   
+         {"name":"Female", "comp":"return v === 2" }
             
 
       ]
@@ -301,6 +343,16 @@
          {"name":"<= 59 min  ", "value":59 },
          {"name":"<= 89 min  ", "value":89 }, 
          {"name":"90+ min  ", "value":999 }
+      ],
+   
+      "binsCompare":[
+         {"name":"<= 9 min  ", "comp":"return v <= 9" },   
+         {"name":"<= 19 min  ", "comp":"return v > 9 && v <= 19" },
+         {"name":"<= 29 min  ", "comp":"return v > 19 && v <= 29" },   
+         {"name":"<= 39 min  ", "comp":"return v > 29 && v <= 39" },   
+         {"name":"<= 59 min  ", "comp":"return v > 39 && v <= 59" },
+         {"name":"<= 89 min  ", "comp":"return v > 59 && v <= 89" }, 
+         {"name":"90+ min  ", "comp":"return v > 89" }
       ]
    },
 
@@ -340,6 +392,18 @@
          {"name":"<= 69 years", "value":69 },   
          {"name":"<= 79 years", "value":79 },
          {"name":"80+ years", "value":999 }
+      ],
+   
+      "binsCompare":[ 
+         {"name":"<= 9 years", "comp":"return v <= 9" },   
+         {"name":"<= 19 years", "comp":"return v > 9 && v <= 19" },
+         {"name":"<= 29 years", "comp":"return v > 19 && v <= 29" },   
+         {"name":"<= 39 years", "comp":"return v > 29 && v <= 39" },   
+         {"name":"<= 49 years", "comp":"return v > 39 && v <= 49" },
+         {"name":"<= 59 years", "comp":"return v > 49 && v <= 59" }, 
+         {"name":"<= 69 years", "comp":"return v > 59 && v <= 69 "},   
+         {"name":"<= 79 years", "comp":"return v > 69 && v <= 79" },
+         {"name":"80+ years", "comp":"return v > 79" }
       ]
    },
 
@@ -358,6 +422,12 @@
          {"name":" N/A ( not a worker or public transportaion", "value":"bb" },   
          {"name":" Drive alone", "value":1 },
          {"name":" Allocated(Car-pool)", "value":10 }
+      ],
+   
+      "binsCompare":[
+         {"name":" N/A ( not a worker or public transportaion", "comp":"return v === 0" },   
+         {"name":" Drive alone", "comp":"return v === 1" },
+         {"name":" Allocated(Car-pool)", "comp":"return v <=10" }
       ]
    },
 
@@ -391,6 +461,20 @@
          {"name":" Unpaid family workers", "value":8 },
          {"name":" N/A (not in universe)", "value":"b" }
       
+      ],
+   
+      "binsCompare":[
+     
+         {"name":" private for-profit wage and salary workers", "comp":"return v === 1" },
+         {"name":" Private not-for-profit wage and salary workers", "comp":"return v === 2" },
+         {"name":" Local government workers", "comp":"return v === 3" },
+         {"name":" State government workers", "comp":"return v === 4" },
+         {"name":" Federal government workers", "comp":"return v === 5" },
+         {"name":" Self-employed in own not incorporated business workers", "comp":"return v === 6" },
+         {"name":" Self-employed in own incorporated business workers", "comp":"return v === 7" },
+         {"name":" Unpaid family workers", "comp":"return v === 8" },
+         {"name":" N/A (not in universe)", "comp":"return v === 0" }
+      
       ]
    }, 
    
@@ -421,7 +505,19 @@
         {"name":"< 125,000", "value": 124999},
         {"name":"> 125,000", "value": 99999999}
   
-     ]
+     ],
+   
+     "binsCompare":[
+       {"name":"< 15,000", "comp": "return v <= 14999"},
+       {"name":"< 25,000", "comp": "return v > 14999 && v <= 24999"},
+       {"name":"< 35,000", "comp": "return v > 24999 && v <= 34999"},
+       {"name":"< 45,000", "comp": "return v > 34999 && v <= 44999"},
+       {"name":"< 60,000", "comp": "return v > 44999 && v <= 59999"},
+       {"name":"< 75,000", "comp": "return v > 59999 && v <= 74999"},
+       {"name":"< 125,000", "comp":"return v > 74999 && v <=  124999"},
+       {"name":"> 125,000", "comp":"return v > 124999"}
+ 
+    ]
       
       
    },
@@ -459,6 +555,22 @@
          {"name":"Worked from home", "value":11},
          {"name":" N/A (not in universe)", "value":"bb" }
       
+      ],
+   
+      "binsCompare":[
+     
+         {"name":"Car, truck, or van", "comp":"return v === 1" },
+         {"name":"Bus", "comp":"return v === 2" },
+         {"name":"Subway or elevated rail", "comp":"return v === 3" },
+         {"name":"Long-distance train or commuter rail", "comp":"return v === 4" },
+         {"name":"Light rail, streetcar or trolley (carro público in Puerto Rico)", "comp":"return v === 5" },
+         {"name":"Ferryboat", "comp":"return v === 6" },
+         {"name":"Taxicab, motorcycle, or other means", "comp":"return v === 8" },
+         {"name":"Bicycle", "comp":"return v === 9" },
+         {"name":"Walked", "comp":"return v === 10" },
+         {"name":"Worked from home", "comp":"return v === 11"},
+         {"name":" N/A (not in universe)", "comp":"return v === 0" }
+      
       ]
    },
    "CIT":{
@@ -480,6 +592,14 @@
          {"name":"born abroad of American parent(s)", "value":3 },
          {"name":"U.S. citizen by naturalization", "value":4 },
          {"name":"Not a U.S. citizen", "value":5 }
+      ],
+   
+      "binsCompare":[
+         {"name":"born in the United States", "comp":"return v === 1" },   
+         {"name":"born in Puerto Rico or U.S. Island Areas", "comp":"return v === 2" },
+         {"name":"born abroad of American parent(s)", "comp":"return v === 3" },
+         {"name":"U.S. citizen by naturalization", "comp":"return v === 4" },
+         {"name":"Not a U.S. citizen", "comp":"return v === 5" }
       ]
    },
 
@@ -543,6 +663,36 @@
          {"name":" Professional school degree", "value":23 },    
          {"name":" Doctorate degree", "value":24},
          {"name":" N/A", "value":"bb"}        
+
+      ],
+   
+      "binsCompare":
+      [
+         {"name":" No schooling completed", "comp":"return v === 1" },   
+         {"name":" Nursery school", "comp":"return v === 2" },       
+         {"name":" Kindergarten", "comp":"return v === 3" },    
+         {"name":" 1st grade", "comp":"return v === 4" },   
+         {"name":" 2nd grade", "comp":"return v === 5" }, 
+         {"name":" 3rd grade", "comp":"return v === 6" },
+         {"name":" 4th grade", "comp":"return v === 7" },
+         {"name":" 5th grade", "comp":"return v === 8" },   
+         {"name":" 6th grade", "comp":"return v === 9" }, 
+         {"name":" 7th grade", "comp":"return v === 10" },
+         {"name":" 8th grade", "comp":"return v === 11" },
+         {"name":" 9th grade", "comp":"return v === 12" },   
+         {"name":" 10th grade", "comp":"return v === 13" }, 
+         {"name":" 11th grade", "comp":"return v === 14" },
+         {"name":" 12th grade, no diploma", "comp":"return v === 15" },
+         {"name":" Regular high school diploma", "comp":"return v === 16" },    
+         {"name":" GED or alternative credential", "comp":"return v === 17" },    
+         {"name":" Some college, less than 1 year", "comp":"return v === 18" },    
+         {"name":" Some college, 1 or more years, no degree", "comp":"return v === 19" },   
+         {"name":" Associate's degree", "comp":"return v === 20" },    
+         {"name":" Bachelor's degree", "comp":"return v === 21"},
+         {"name":" Master's degree", "comp":"return v === 22" },   
+         {"name":" Professional school degree", "comp":"return v === 23" },    
+         {"name":" Doctorate degree", "comp":"return v === 24"},
+         {"name":" N/A", "comp":"return v === 0"}        
 
       ]
    
@@ -608,6 +758,38 @@
          {"name":" 10 pm-10:59 pm", "value":273 },
          {"name":" 11 pm-11:59 pm", "value":285 }, 
          {"name":" N/A", "value":"bbb"}        
+
+      ],
+
+   
+   
+      "binsCompare":
+      [
+         {"name":" 12 am -12:59 am", "comp":"return v <= 10" },   
+         {"name":" 1 am -1:59 am", "comp":"return v > 10 && v <= 21" },       
+         {"name":" 2 am -2:59 am", "comp":"return v > 21 && v <= 33" },    
+         {"name":" 3 am -3:59 am", "comp":"return v > 33 && v <= 45" },   
+         {"name":" 4 am -4:59 am", "comp":"return v > 45 && v <= 57" }, 
+         {"name":" 5 am -5:59 am", "comp":"return v > 57 && v <= 69" },
+         {"name":" 6 am -6:59 am", "comp":"return v > 69 && v <= 81" },
+         {"name":" 7 am -7:59 am", "comp":"return v > 81 && v <= 93" },   
+         {"name":" 8 am -8:59 am", "comp":"return v > 93 && v <= 105" }, 
+         {"name":" 9 am -9:59 am", "comp":"return v > 105 && v <= 117" },
+         {"name":" 10 am -10:59 am", "comp":"return v > 117 && v <= 129" },
+         {"name":" 11 am -11:59 am", "comp":"return v > 129 && v <= 141" },   
+         {"name":" 12 pm-12:59 am", "comp":"return v > 141 && v <= 153" },   
+         {"name":" 1 pm-1:59 pm", "comp":"return v > 153 && v <= 165" },       
+         {"name":" 2 pm-2:59 pm", "comp":"return v > 165 && v <= 177" },    
+         {"name":" 3 pm-3:59 pm", "comp":"return v > 177 && v <= 189" },   
+         {"name":" 4 pm-4:59 pm", "comp":"return v > 189 && v <= 201" }, 
+         {"name":" 5 pm-5:59 pm", "comp":"return v > 201 && v <= 213" },
+         {"name":" 6 pm-6:59 pm", "comp":"return v > 213 && v <= 225" },
+         {"name":" 7 pm-7:59 pm", "comp":"return v > 225 && v <= 237" },   
+         {"name":" 8 pm-8:59 pm", "comp":"return v > 237 && v <= 249" }, 
+         {"name":" 9 pm-9:59 pm", "comp":"return v > 249 && v <= 261" },
+         {"name":" 10 pm-10:59 pm", "comp":"return v > 261 && v <= 273" },
+         {"name":" 11 pm-11:59 pm", "comp":"return v > 273 && v <= 285" }, 
+         {"name":" N/A", "comp":"return v === 0"}        
 
       ]
    
