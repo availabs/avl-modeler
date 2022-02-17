@@ -1,6 +1,7 @@
 {
     "HINCP":{
        "name":"Household Income",
+       "comment": "qa check passed",
        "synpop_type":"households",
        "var": "HINCP",
        "acs_type":"BG",
@@ -14,20 +15,6 @@
         "125000":["B19001_013E","B19001_014E"],
         "125000+":["B19001_015E","B19001_016E", "B19001_017E"]
        },
-    
-       "bins":[
-         {"name":"< 15,000", "value": 14999},
-         {"name":"< 25,000", "value": 24999},
-         {"name":"< 35,000", "value": 34999},
-         {"name":"< 45,000", "value": 44999},
-         {"name":"< 60,000", "value": 59999},
-         {"name":"< 75,000", "value": 74999},
-         {"name":"< 125,000", "value": 124999},
-         {"name":"> 125,000", "value": 99999999}
-   
-      ],
-
-       
       "binsCompare":[
          {"name":"< 15,000", "comp": "return v < 15000"},
          {"name":"< 25,000", "comp": "return v >= 15000 && v < 25000"},
@@ -37,35 +24,22 @@
          {"name":"< 75,000", "comp": "return v >= 60000 && v < 75000"},
          {"name":"< 125,000", "comp": "return v >= 75000 && v < 125000"},
          {"name":"> 125,000", "comp": "return v >= 125000"}
-      
       ]
-       
-       
     },
 
     "VEH":{
-       "name":"Household Vehicles Available",
-       "synpop_type":"households",
-       "var": "VEH",
-       "acs_type":"BG",
-       "acs_vars":{ 
-         "0" : ["B25044_003E"], 
-         "1": ["B25044_004E"],
-         "2" : ["B25044_005E"],
-         "3" : ["B25044_006E", "B25044_007E","B25044_008E"]
-          },
-       "binsOld":[
-          0,
-          1,
-          2
-       ],
-       "bins":[
-          {"name":"0 vehicle", "value":0 },
-          {"name":"1 vehicle", "value":1 },
-          {"name":"2 vehicles", "value":2 },
-          {"name":"3+ vehicles", "value":6 }
-         ],
-       "binsCompare":[
+         "name":"Household Vehicles Available",
+         "synpop_type":"households",
+         "comment": "qa check passed",
+         "var": "VEH",
+         "acs_type":"BG",
+         "acs_vars":{ 
+            "0" : ["B25044_003E", "B25044_010E"], 
+            "1": ["B25044_004E", "B25044_011E"],
+            "2" : ["B25044_005E", "B25044_012E"],
+            "3" : ["B25044_006E", "B25044_007E","B25044_008E", "B25044_013E","B25044_014E","B25044_015E"]
+         },
+         "binsCompare":[
           {"name":"0 vehicle", "comp": "return v === 0" },
           {"name":"1 vehicle", "comp": "return v === 1" },
           {"name":"2 vehicles", "comp": "return v === 2"  },
@@ -76,6 +50,7 @@
     "YBL":{
       "name":"Year Structure Built",
       "synpop_type":"households",
+      "comment": "qa check passed",
       "var": "YBL",
       "acs_type":"BG",
       "acs_vars":{ 
@@ -133,45 +108,25 @@
    "RNTP":{
      "name":"Monthly Rent in Household",
      "synpop_type":"households",
+     "comment": "qa check semi passed",
      "var": "RNTP",
      "acs_type":"BG",
      "acs_vars":{ 
-        "300":["B25061_002E","B25061_003E","B25061_004E", "B25061_005E","B25061_006E" ],
-        "500":["B25061_007E","B25061_008E","B25061_009E","B25061_010E"],
-        "700":["B25061_011E","B25061_012E","B25061_013E","B25061_014E"],
-        "900":["B25061_015E","B25061_016E", "B25061_017E"],
-        "1500":["B25061_018E","B25061_019E", "B25061_020E"],
-        "99999":["B25061_021E","B25061_022E","B25061_023E","B25061_024E","B25061_025E"]
-
+        "300":["B25063_003E","B25063_004E", "B25063_005E","B25063_006E","B25063_007E","B25061_002E","B25061_003E","B25061_004E", "B25061_005E","B25061_006E"],
+        "500":["B25063_008E","B25063_009E","B25063_010E","B25063_011E","B25061_017E","B25061_008E","B25061_009E","B25061_010E"],
+        "700":["B25063_012E","B25063_013E","B25063_014E","B25063_015E","B25061_011E","B25061_012E","B25061_013E","B25061_014E"],
+        "900":["B25063_016E", "B25063_017E","B25063_018E","B25061_017E","B25061_016E", "B25061_017E"],
+        "1500":["B25063_019E", "B25063_020E","B25063_021E","B25061_018E","B25061_019E", "B25061_020E"],
+        "99999":["B25063_022E","B25063_023E","B25063_024E","B25063_025E","B25063_026E","B25061_021E","B25061_022E","B25061_023E","B25061_024E","B25061_025E"]
       },
-
-
-     "acs_varsWithMedianGrossRentValue":{ 
-      "300":["B25064_001E"],
-      "500":["B25064_001E"],
-      "700":["B25064_001E"],
-      "900":["B25064_001E"],
-      "1500":["B25064_001E"],
-      "2000":["B25064_001E"]
-      
-      },
-     
-
-
-     "bins":
-     [
-        {"name":"<= 300", "value":300 },   
-        {"name":"<= 500", "value":500 },       
-        {"name":"<= 700", "value":700 },    
-        {"name":"<= 900", "value":900 },    
-        {"name":"<= 1500", "value":1500 },    
-        {"name":"> 1500", "value":9999999 } 
-         
-
-     ],
-     
-
-
+      "acs_vars_contract_cash_asked":{ 
+         "300":["B25056_003E","B25056_004E", "B25056_005E","B25056_006E","B25056_007E","B25063_003E","B25063_004E", "B25063_005E","B25063_006E","B25063_007E","B25061_002E","B25061_003E","B25061_004E", "B25061_005E","B25061_006E"],
+         "500":["B25056_008E","B25056_009E","B25056_010E","B25056_011E","B25063_008E","B25063_009E","B25063_010E","B25063_011E","B25061_017E","B25061_008E","B25061_009E","B25061_010E"],
+         "700":["B25056_012E","B25056_013E","B25056_014E","B25056_015E","B25063_012E","B25063_013E","B25063_014E","B25063_015E","B25061_011E","B25061_012E","B25061_013E","B25061_014E"],
+         "900":["B25056_016E", "B25056_017E","B25056_018E","B25063_016E", "B25063_017E","B25063_018E","B25061_017E","B25061_016E", "B25061_017E"],
+         "1500":["B25056_019E", "B25056_020E","B25056_021E","B25063_019E", "B25063_020E","B25063_021E","B25061_018E","B25061_019E", "B25061_020E"],
+         "99999":["B25056_022E","B25056_023E","B25056_024E","B25056_025E","B25056_026E","B25063_022E","B25063_023E","B25063_024E","B25063_025E","B25063_026E","B25061_021E","B25061_022E","B25061_023E","B25061_024E","B25061_025E"]
+       },
      "binsCompare":
      [
         {"name":"<= 300", "comp":"return v <= 300"},   
@@ -191,10 +146,11 @@
    "NP":{
       "name":"Number of Person in Household",
       "synpop_type":"households",
+      "comment": "qa check passed",
       "var": "NP",
       "acs_type":"Tract",
       "acs_vars":{ 
-         "0": [""],
+         "0": ["B25004_001E"],
          "1": ["S2501_C01_002E"],
          "2" : ["S2501_C01_003E"],
          "3" : ["S2501_C01_004E"],
@@ -224,6 +180,7 @@
    "WIF":{
       "name":"Workers in Family",
       "synpop_type":"households",
+      "comment": "qa check semi passed-synpop n/a b not included",
       "var": "WIF",
       "acs_type":"Tract",
       "acs_vars":{ 
@@ -233,12 +190,6 @@
       "3+" : ["B08202_005E"]
          },
    
-      "bins":[
-         {"name":"No workers", "value":0 },
-         {"name":"1 workers", "value":1 },
-         {"name":"2 workers", "value":2 },
-         {"name":"3+ workers", "value":3 }
-      ],
    
       "binsCompare":[
          {"name":"No workers", "comp":"return v === 0" },
@@ -251,6 +202,7 @@
    "GASP":{
       "name":"Monthly GAS Cost in Household",
       "synpop_type":"households",
+      "comment": "qa check not passed - no hh gas cost by count",
       "var": "GASP",
       "acs_type":"",
       "acs_vars":{ 
@@ -295,6 +247,7 @@
    "SEX":{
       "name":"SEX",
       "synpop_type":"persons",
+      "comment": "qa check passed",
       "var": "SEX",
       "acs_type":"BG",
       "acs_vars":{ 
@@ -323,6 +276,7 @@
    "JWMNP":{
       "name":"Travel time to work",
       "synpop_type":"persons",
+      "comment": "qa check passed-there are a few other ttw variable but bigger values",
       "var": "JWMNP",
       "acs_type":"Tract",
       "acs_vars":{ 
@@ -335,15 +289,6 @@
       "90+" : ["B08012_013E"]
          },
    
-      "bins":[
-         {"name":"<= 9 min  ", "value":9 },   
-         {"name":"<= 19 min  ", "value":19 },
-         {"name":"<= 29 min  ", "value":29 },   
-         {"name":"<= 39 min  ", "value":39 },   
-         {"name":"<= 59 min  ", "value":59 },
-         {"name":"<= 89 min  ", "value":89 }, 
-         {"name":"90+ min  ", "value":999 }
-      ],
    
       "binsCompare":[
          {"name":"<= 9 min  ", "comp":"return v <= 9" },   
@@ -359,6 +304,7 @@
    "AGEP":{
       "name":"Age",
       "synpop_type":"persons",
+      "comment": "qa check NOT passed-- female and male combined but much less acs",
       "var": "AGEP",
       "acs_type":"BG",
       "acs_vars":{  
@@ -382,17 +328,7 @@
                   "B01001_048E","B01001_049E"]
          },
    
-      "bins":[ 
-         {"name":"<= 9 years", "value":9 },   
-         {"name":"<= 19 years", "value":19 },
-         {"name":"<= 29 years", "value":29 },   
-         {"name":"<= 39 years", "value":39 },   
-         {"name":"<= 49 years", "value":49 },
-         {"name":"<= 59 years", "value":59 }, 
-         {"name":"<= 69 years", "value":69 },   
-         {"name":"<= 79 years", "value":79 },
-         {"name":"80+ years", "value":999 }
-      ],
+  
    
       "binsCompare":[ 
          {"name":"<= 9 years", "comp":"return v <= 9" },   
@@ -410,8 +346,9 @@
    "JWRIP":{
       "name":"Vehicle occupancy",
       "synpop_type":"persons",
+      "comment": "qa check NOT passed-- allocated not allocated not quite clear and # is very diff. N/A too big",
       "var": "JWRIP",
-      "acs_type":"Tract",
+      "acs_type":"BG",
       "acs_vars":{ 
       "N/A" : ["B99082_005E"],
       "0": ["B99082_004E"],
@@ -419,21 +356,22 @@
          },
    
       "bins":[
-         {"name":" N/A ( not a worker or public transportaion", "value":"bb" },   
-         {"name":" Drive alone", "value":1 },
-         {"name":" Allocated(Car-pool)", "value":10 }
+         {"name":"N/A(not a worker or public transportaion)", "value":"bb" },   
+         {"name":"Drive alone", "value":1 },
+         {"name":"Allocated(Car-pool)", "value":10 }
       ],
    
       "binsCompare":[
          {"name":" N/A ( not a worker or public transportaion", "comp":"return v === 0" },   
          {"name":" Drive alone", "comp":"return v === 1" },
-         {"name":" Allocated(Car-pool)", "comp":"return v <=10" }
+         {"name":" Allocated(Car-pool)", "comp":"return v > 1 && v <=10" }
       ]
    },
 
    "COW":{
       "name":"Class of worker",
       "synpop_type":"persons",
+      "comment": "qa check passed",
       "var": "COW",
       "acs_type":"Tract",
       "acs_vars":{ 
@@ -451,29 +389,29 @@
    
       "bins":[
      
-         {"name":" private for-profit wage and salary workers", "value":1 },
-         {"name":" Private not-for-profit wage and salary workers", "value":2 },
-         {"name":" Local government workers", "value":3 },
-         {"name":" State government workers", "value":4 },
-         {"name":" Federal government workers", "value":5 },
-         {"name":" Self-employed in own not incorporated business workers", "value":6 },
-         {"name":" Self-employed in own incorporated business workers", "value":7 },
-         {"name":" Unpaid family workers", "value":8 },
-         {"name":" N/A (not in universe)", "value":"b" }
+         {"name":"Private for-profit wage and salary workers", "value":1 },
+         {"name":"Private not-for-profit wage and salary workers", "value":2 },
+         {"name":"Local government workers", "value":3 },
+         {"name":"State government workers", "value":4 },
+         {"name":"Federal government workers", "value":5 },
+         {"name":"Self-employed in own not incorporated business workers", "value":6 },
+         {"name":"Self-employed in own incorporated business workers", "value":7 },
+         {"name":"Unpaid family workers", "value":8 },
+         {"name":"N/A (not in universe)", "value":"b" }
       
       ],
    
       "binsCompare":[
      
-         {"name":" private for-profit wage and salary workers", "comp":"return v === 1" },
-         {"name":" Private not-for-profit wage and salary workers", "comp":"return v === 2" },
-         {"name":" Local government workers", "comp":"return v === 3" },
-         {"name":" State government workers", "comp":"return v === 4" },
-         {"name":" Federal government workers", "comp":"return v === 5" },
-         {"name":" Self-employed in own not incorporated business workers", "comp":"return v === 6" },
-         {"name":" Self-employed in own incorporated business workers", "comp":"return v === 7" },
-         {"name":" Unpaid family workers", "comp":"return v === 8" },
-         {"name":" N/A (not in universe)", "comp":"return v === 0" }
+         {"name":"Private for-profit wage and salary workers", "comp":"return v === 1" },
+         {"name":"Private not-for-profit wage and salary workers", "comp":"return v === 2" },
+         {"name":"Local government workers", "comp":"return v === 3" },
+         {"name":"State government workers", "comp":"return v === 4" },
+         {"name":"Federal government workers", "comp":"return v === 5" },
+         {"name":"Self-employed in own not incorporated business workers", "comp":"return v === 6" },
+         {"name":"Self-employed in own incorporated business workers", "comp":"return v === 7" },
+         {"name":"Unpaid family workers", "comp":"return v === 8" },
+         {"name":"N/A (not in universe)", "comp":"return v === 0" }
       
       ]
    }, 
@@ -481,6 +419,7 @@
    "PINCP":{
       "name":"Person's Income",
       "synpop_type":"persons",
+      "comment": "qa check NOT passed-- there are per capita income but it is total value only or by race ",
       "var": "PINCP",
       "acs_type":"BG",
       "acs_vars":{
@@ -508,7 +447,7 @@
      ],
    
      "binsCompare":[
-       {"name":"< 15,000", "comp": "return v <= 14999"},
+       {"name":"< 15,000", "comp": "return v >= 1 && v <= 14999"},
        {"name":"< 25,000", "comp": "return v > 14999 && v <= 24999"},
        {"name":"< 35,000", "comp": "return v > 24999 && v <= 34999"},
        {"name":"< 45,000", "comp": "return v > 34999 && v <= 44999"},
@@ -524,6 +463,7 @@
    "JWTRNS":{
       "name":"Means of transportation to work",
       "synpop_type":"persons",
+      "comment": "qa check passed",
       "var": "JWTRNS",
       "acs_type":"Tract",
       "acs_vars":{ 
@@ -541,21 +481,6 @@
       "N/A" : [""]
          },
    
-      "bins":[
-     
-         {"name":"Car, truck, or van", "value":1 },
-         {"name":"Bus", "value":2 },
-         {"name":"Subway or elevated rail", "value":3 },
-         {"name":"Long-distance train or commuter rail", "value":4 },
-         {"name":"Light rail, streetcar or trolley (carro público in Puerto Rico)", "value":5 },
-         {"name":"Ferryboat", "value":6 },
-         {"name":"Taxicab, motorcycle, or other means", "value":8 },
-         {"name":"Bicycle", "value":9 },
-         {"name":"Walked", "value":10 },
-         {"name":"Worked from home", "value":11},
-         {"name":" N/A (not in universe)", "value":"bb" }
-      
-      ],
    
       "binsCompare":[
      
@@ -569,13 +494,14 @@
          {"name":"Bicycle", "comp":"return v === 9" },
          {"name":"Walked", "comp":"return v === 10" },
          {"name":"Worked from home", "comp":"return v === 11"},
-         {"name":" N/A (not in universe)", "comp":"return v === 0" }
+         {"name":"N/A (not in universe)", "comp":"return v === 0" }
       
       ]
    },
    "CIT":{
       "name":"Citizenship status",
       "synpop_type":"persons",
+      "comment": "qa check passed",
       "var": "CIT",
       "acs_type":"Tract",
       "acs_vars":{ 
@@ -586,13 +512,6 @@
       "5" : ["B05001_006E"]
          },
    
-      "bins":[
-         {"name":"born in the United States", "value":1 },   
-         {"name":"born in Puerto Rico or U.S. Island Areas", "value":2 },
-         {"name":"born abroad of American parent(s)", "value":3 },
-         {"name":"U.S. citizen by naturalization", "value":4 },
-         {"name":"Not a U.S. citizen", "value":5 }
-      ],
    
       "binsCompare":[
          {"name":"born in the United States", "comp":"return v === 1" },   
@@ -606,6 +525,7 @@
    "SCHL":{
       "name":"Educational attainment",
       "synpop_type":"persons",
+      "comment": "qa check NOT passed--not sure why acs( EA over 25 )  a lot higher ",
       "var": "SCHL",
       "acs_type":"Tract",
       "acs_vars":{ 
@@ -700,10 +620,11 @@
    "JWAP":{
       "name":"Time of arrival at Work",
       "synpop_type":"persons",
+      "comment": "qa check NOT passed--there are  TIME ARRIVING AT WORK FROM HOME FOR WORKPLACE GEOGRAPHY but null in bg and tract",
       "var": "JWAP",
       "acs_type":"",
       "acs_vars":{ 
-         "1":[""],
+         "1":["B08602_002E"], 
          "2":[""],
          "3":[""],
          "4":[""],
