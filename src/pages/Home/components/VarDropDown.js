@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
-// import { useFalcor } from '@availabs/avl-components';
-// import get from 'lodash.get'
-// import flatten from 'lodash.flatten';
+
 import VarDisplay from "./VarDisplay";
 // import VarBarChart from "./VarBarChart";
 

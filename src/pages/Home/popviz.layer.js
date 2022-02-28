@@ -129,11 +129,10 @@ class PopVizLayer extends LayerContainer {
       Component: VarDropDown,
       show: true,
     },
-    // ,
-    // {
-    //   Component: SelectedTable,
-    //   show: true,
-    // },
+    {
+      Component: SelectedTable,
+      show: true,
+    },
   ];
 
   households = {};

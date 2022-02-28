@@ -84,6 +84,65 @@ const OverviewTable = ({ layer }) => {
 
   return (
     <div className="w-45 bg-gray-600 text-white">
+      <table style={{ marginTop: `10px` }}>
+        <thead>
+          <tr style={{ borderBottom: `1px solid` }}>
+            <th> </th>
+
+            <th>Total Counts</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td className="max-w-sm px-6 py-2 text-left whitespace-nowrap text-sm font-medium text-gray-300">
+              SynthPop Households:
+            </td>
+
+            <td className="max-w-sm px-6 py-2 text-right whitespace-nowrap text-sm font-medium text-gray-300">
+              {synHouseholds.length.toLocaleString()}
+            </td>
+          </tr>
+          <tr>
+            <td className="max-w-sm px-6 py-2 text-left whitespace-nowrap text-sm font-medium text-gray-300">
+              SynthPop Persons:
+            </td>
+
+            <td className="max-w-sm px-6 py-2 text-right whitespace-nowrap text-sm font-medium text-gray-300">
+              {synPersons.length.toLocaleString()}
+            </td>
+          </tr>
+          <tr>
+            <td className="max-w-sm px-6 py-2 text-left whitespace-nowrap text-sm font-medium text-gray-300">
+              Number of BlockGroups:
+            </td>
+
+            <td className="max-w-sm px-6 py-2 text-right whitespace-nowrap text-sm font-medium text-gray-300">
+              {uniqueBgs.length}
+            </td>
+          </tr>
+          <tr>
+            <td className="max-w-sm px-6 py-2 text-left whitespace-nowrap text-sm font-medium text-gray-300">
+              ACS Households:
+            </td>
+
+            <td className="max-w-sm px-6 py-2 text-right whitespace-nowrap text-sm font-medium text-gray-300">
+              {acsTotals.totalHH.toLocaleString()}
+            </td>
+          </tr>
+
+          <tr>
+            <td className="max-w-sm px-6 py-2 text-left whitespace-nowrap text-sm font-medium text-gray-300">
+              ACS Population:
+            </td>
+
+            <td className="max-w-sm px-6 py-2 text-right whitespace-nowrap text-sm font-medium text-gray-300">
+              {acsTotals.totalPop.toLocaleString()}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      {/* 
       <div
         style={{
           fontSize: "1.2em",
@@ -103,17 +162,13 @@ const OverviewTable = ({ layer }) => {
       <div className="px-6 py-2 text-left whitespace-nowrap text-sm font-bold text-gray-300">
         Number of BlockGroups: {uniqueBgs.length}
       </div>
-      {/* <button 
-             onClick={startProcess} 
-             className={'hover:bg-gray-700 bg-gray-400 text-white cursor-pointer p-2'}>
-                Calculate HH and Pop values from ACS BGs
-            </button> */}
+ 
       <div className="px-6 py-2 text-left whitespace-nowrap text-sm font-bold text-gray-300">
         ACS Households: {acsTotals.totalHH.toLocaleString()}
       </div>
       <div className="px-6 py-2 text-left whitespace-nowrap text-sm font-bold text-gray-300">
         ACS Population: {acsTotals.totalPop.toLocaleString()}
-      </div>
+      </div> */}
     </div>
   );
 };

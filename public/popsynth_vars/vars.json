@@ -158,14 +158,7 @@
       
          },
       
-      "bins":[
-
-         {"name":" <= 1 person", "value":1 },
-         {"name":"2 person", "value":2 },
-         {"name":"3 person", "value":3 },
-         {"name":"4+ person", "value":20 }
-
-         ],
+    
 
       "binsCompare":[
           {"name":" 0 person", "comp": "return v === 0" },
@@ -434,17 +427,7 @@
 
       },
    
-      "bins":[
-        {"name":"< 15,000", "value": 14999},
-        {"name":"< 25,000", "value": 24999},
-        {"name":"< 35,000", "value": 34999},
-        {"name":"< 45,000", "value": 44999},
-        {"name":"< 60,000", "value": 59999},
-        {"name":"< 75,000", "value": 74999},
-        {"name":"< 125,000", "value": 124999},
-        {"name":"> 125,000", "value": 99999999}
-  
-     ],
+   
    
      "binsCompare":[
        {"name":"< 15,000", "comp": "return v >= 1 && v <= 14999"},
@@ -556,35 +539,7 @@
          "N/A" : [""]
          },
    
-      "bins":
-      [
-         {"name":" No schooling completed", "value":1 },   
-         {"name":" Nursery school", "value":2 },       
-         {"name":" Kindergarten", "value":3 },    
-         {"name":" 1st grade", "value":4 },   
-         {"name":" 2nd grade", "value":5 }, 
-         {"name":" 3rd grade", "value":6 },
-         {"name":" 4th grade", "value":7 },
-         {"name":" 5th grade", "value":8 },   
-         {"name":" 6th grade", "value":9 }, 
-         {"name":" 7th grade", "value":10 },
-         {"name":" 8th grade", "value":11 },
-         {"name":" 9th grade", "value":12 },   
-         {"name":" 10th grade", "value":13 }, 
-         {"name":" 11th grade", "value":14 },
-         {"name":" 12th grade, no diploma", "value":15 },
-         {"name":" Regular high school diploma", "value":16 },    
-         {"name":" GED or alternative credential", "value":17 },    
-         {"name":" Some college, less than 1 year", "value":18 },    
-         {"name":" Some college, 1 or more years, no degree", "value":19 },   
-         {"name":" Associate's degree", "value":20 },    
-         {"name":" Bachelor's degree", "value":21},
-         {"name":" Master's degree", "value":22 },   
-         {"name":" Professional school degree", "value":23 },    
-         {"name":" Doctorate degree", "value":24},
-         {"name":" N/A", "value":"bb"}        
-
-      ],
+    
    
       "binsCompare":
       [
@@ -652,37 +607,7 @@
          "N/A" : [""]
          },
    
-      "bins":
-      [
-         {"name":" 12 am -12:59 am", "value":10 },   
-         {"name":" 1 am -1:59 am", "value":21 },       
-         {"name":" 2 am -2:59 am", "value":33 },    
-         {"name":" 3 am -3:59 am", "value":45 },   
-         {"name":" 4 am -4:59 am", "value":57 }, 
-         {"name":" 5 am -5:59 am", "value":69 },
-         {"name":" 6 am -6:59 am", "value":81 },
-         {"name":" 7 am -7:59 am", "value":93 },   
-         {"name":" 8 am -8:59 am", "value":105 }, 
-         {"name":" 9 am -9:59 am", "value":117 },
-         {"name":" 10 am -10:59 am", "value":129 },
-         {"name":" 11 am -11:59 am", "value":141 },   
-         {"name":" 12 pm-12:59 am", "value":153 },   
-         {"name":" 1 pm-1:59 pm", "value":165 },       
-         {"name":" 2 pm-2:59 pm", "value":177 },    
-         {"name":" 3 pm-3:59 pm", "value":189 },   
-         {"name":" 4 pm-4:59 pm", "value":201 }, 
-         {"name":" 5 pm-5:59 pm", "value":213 },
-         {"name":" 6 pm-6:59 pm", "value":225 },
-         {"name":" 7 pm-7:59 pm", "value":237 },   
-         {"name":" 8 pm-8:59 pm", "value":249 }, 
-         {"name":" 9 pm-9:59 pm", "value":261 },
-         {"name":" 10 pm-10:59 pm", "value":273 },
-         {"name":" 11 pm-11:59 pm", "value":285 }, 
-         {"name":" N/A", "value":"bbb"}        
 
-      ],
-
-   
    
       "binsCompare":
       [

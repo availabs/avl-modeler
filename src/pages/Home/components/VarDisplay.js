@@ -2,10 +2,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import { useFalcor } from "@availabs/avl-components";
 import get from "lodash.get";
 import VarBarChart from "./VarBarChart";
-import SelectedVarBarChart from "./SelectedVarBarChart";
-import SelectedTable from "./SelectedTable";
-
-// import flatten from "lodash.flatten";
+import VarSelectedBarChart from "./VarSelectedBarChart";
 
 const VarDisplay = ({ variable, layer }) => {
   const [acsOutput, setAcsOutput] = useState({});
@@ -322,26 +319,12 @@ const VarDisplay = ({ variable, layer }) => {
         <VarBarChart data={VarChartData} />
       </div>
 
-      {/* <div
-        style={{
-          fontSize: "1.2em",
-          fontWeigh: 600,
-          color: colors.primary,
-          borderBottom: `2px solid ${colors.light}`,
-          marginTop: `30px`,
-        }}
-      >
-        Selected Data
-      </div> */}
-      {/* <div className="px-6 py-2 text-left whitespace-nowrap text-sm font-bold text-gray-300">
-        By variable selected
-      </div> */}
       <table style={{ marginTop: `10px` }}>
         <thead>
           <tr style={{ borderBottom: `1px solid` }}>
             <th></th>
-            <th>&nbsp;&nbsp;&nbsp;SynPop Count ({variable.synpop_type}) </th>
-            <th>&nbsp;&nbsp;&nbsp;ACS Count ({variable.acs_type})</th>
+            <th>&nbsp;&nbsp;&nbsp;Selected SynPop ({variable.synpop_type}) </th>
+            <th>&nbsp;&nbsp;&nbsp;Selected ACS ({variable.acs_type})</th>
           </tr>
         </thead>
         <tbody>
@@ -395,11 +378,7 @@ const VarDisplay = ({ variable, layer }) => {
       </table>
 
       <div style={{ height: 250, width: 470 }}>
-        <SelectedVarBarChart data={SelectedVarChartData} />
-      </div>
-
-      <div>
-        <SelectedTable layer={layer} />
+        <VarSelectedBarChart data={SelectedVarChartData} />
       </div>
     </div>
   ) : (

@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { useFalcor } from "@availabs/avl-components";
 import get from "lodash.get";
-import BarChart from "./BarChartComponent";
-// import SelectedBarChart from "./SelectedVarBarChart";
+import SelectedBarChart from "./SelectedBarChart";
+
 import flatten from "lodash.flatten";
 
 const SelectedTable = ({ layer }) => {
@@ -280,18 +280,20 @@ const SelectedTable = ({ layer }) => {
 
   return (
     <div className="w-45 bg-gray-600 text-white">
-      <table style={{ marginTop: `10px` }}>
+      <table
+        style={{ marginTop: `10px`, marginLeft: "auto", marginRight: "auto" }}
+      >
         <thead>
           <tr style={{ borderBottom: `1px solid` }}>
             <th> </th>
-            <th> Selected total counts</th>
+            <th> Selected Total Counts</th>
           </tr>
         </thead>
 
         <tbody>
           <tr>
             <td className="max-w-sm px-6 py-2 text-left whitespace-nowrap text-sm font-medium text-gray-300">
-              BG selected
+              Block Groups
             </td>
             <td className="max-w-sm px-6 py-2 text-right whitespace-nowrap text-sm font-medium text-gray-300">
               {selectedBlockGroups.length.toLocaleString()}
@@ -358,12 +360,8 @@ const SelectedTable = ({ layer }) => {
       </div> */}
 
       <div style={{ height: 250, width: 470 }}>
-        <BarChart data={synPopAcsTotals} />
+        <SelectedBarChart data={synPopAcsTotals} />
       </div>
-
-      {/* <div style={{ height: 250 }}>
-             <SelectedBarChart data={synPopAcsTotals} />
-             </div> */}
     </div>
   );
 };

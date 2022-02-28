@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import * as d3 from "d3";
 import { ResponsiveBar } from "@nivo/bar";
 
-const SelectedVarBarChart = ({ data }) => {
+const VarSelectedBarChart = ({ data }) => {
   console.log("VarBarChartdata------------------------------", data);
   return (
     <ResponsiveBar
@@ -103,4 +103,4 @@ const SelectedVarBarChart = ({ data }) => {
   );
 };
 
-export default SelectedVarBarChart;
+export default VarSelectedBarChart;
